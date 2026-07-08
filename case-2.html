@@ -157,14 +157,19 @@
   .discover-intro p { font-size: var(--fs-body); line-height: 1.85; color: #3A3A5C; margin: 0; }
   .discover-stat {
     background: #fff; border: 1px solid var(--border); border-radius: 16px;
-    padding: 28px; display: flex; flex-direction: column; justify-content: center; gap: 10px;
+    padding: 24px; display: flex; flex-direction: column; justify-content: center; gap: 10px;
     aspect-ratio: 1 / 1; max-width: 200px; align-self: start;
   }
+  .discover-stat-avatar {
+    width: 44px; height: 44px; border-radius: 50%; overflow: hidden;
+    border: 2px solid var(--pink-tint); flex-shrink: 0;
+  }
+  .discover-stat-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
   .discover-stat-value {
     font-family: 'Montserrat', sans-serif; font-weight: 500;
-    font-size: var(--fs-hero); color: var(--primary); line-height: 1;
+    font-size: var(--fs-h2); color: var(--primary); line-height: 1;
   }
-  .discover-stat-label { font-size: var(--fs-body); color: var(--text-muted); line-height: 1.4; }
+  .discover-stat-label { font-size: var(--fs-ui); color: var(--text-muted); line-height: 1.4; }
 
   .pain-points { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .pain-point {
@@ -350,7 +355,7 @@
 
   /* OPPORTUNITY AREAS TABLE */
   .opportunity-intro { font-size: var(--fs-body); color: #3A3A5C; line-height: 1.7; margin-bottom: 24px; }
-  .opportunity-table { width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 32px; }
+  .opportunity-table { width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 32px; box-shadow: 0 8px 32px rgba(26,26,46,0.08); }
   .opp-header { display: grid; grid-template-columns: 1fr 1fr; background: var(--text); padding: 16px 24px; gap: 24px; }
   .opp-header span { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: var(--fs-ui); color: #fff; text-transform: uppercase; letter-spacing: 0.06em; }
   .opp-row { display: grid; grid-template-columns: 1fr 1fr; padding: 18px 24px; gap: 24px; border-bottom: 1px solid var(--border); background: #fff; align-items: start; }
@@ -382,9 +387,9 @@
     align-items: start;
   }
   .floating-screen {
-    border-radius: 16px;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.45);
+    box-shadow: none;
   }
   .floating-screen img { width: 100%; height: auto; display: block; }
   .floating-screen--left  { grid-column: 1; grid-row: 1; }
@@ -393,7 +398,6 @@
     grid-column: 2;
     grid-row: 1 / span 2;
     align-self: center;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
   }
 
   .impact-section { margin-top: 24px; }
@@ -658,13 +662,7 @@
         <div class="phase-num-label">Stage 01</div>
         <h4 class="phase-stage-title">Discover & Define</h4>
 
-        <div class="discover-intro">
-      <p>Before designing anything, I needed to understand the real experience of going through onboarding — from both sides. I conducted interviews with 11 employees across different roles and seniority levels, combining those findings with analytics data and support ticket analysis to identify the most common friction points.</p>
-      <div class="discover-stat">
-        <div class="discover-stat-value">11</div>
-        <div class="discover-stat-label">Employees interviewed across different roles</div>
-      </div>
-    </div>
+        <p>Before designing anything, I needed to understand the real experience of going through onboarding — from both sides. I conducted interviews with 11 employees across different roles and seniority levels, combining those findings with analytics data and support ticket analysis to identify the most common friction points.</p>
 
     <h4 id="affinity" class="phase-stage-title" style="margin-bottom:20px;">Interview Insights</h4>
     <div class="pain-points">
@@ -872,7 +870,7 @@
       <div class="phase-subsection" id="managers">
         <h4 class="stage-title" style="font-size:var(--fs-h2); margin-bottom:16px;">Design for Managers</h4>
         <p>The administrator experience provides full visibility into employee onboarding progress and enables HR teams to review, approve, or reject submissions from a centralized dashboard. Approved employees are automatically onboarded and granted access to their benefits and pay information. If a submission is rejected, employees receive clear feedback and can quickly update and resubmit their information.</p>
-        <div class="stage-full-image" style="margin-top:24px;"><img src="img/NHtable_1.png" alt="Admin dashboard for reviewing new hire submissions"></div>
+        <div class="stage-full-image" style="margin-top:24px;"><img src="img/NHtable.png" alt="Admin dashboard for reviewing new hire submissions"></div>
 
         <div style="background:#fff; border:1px solid var(--border); border-radius:20px; padding:36px; margin-top:32px;">
           <p style="font-weight:500; color:var(--text); margin-bottom:28px;">Instead of relying on emails or manually checking documents, employers can...</p>

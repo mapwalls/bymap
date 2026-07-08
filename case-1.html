@@ -10,7 +10,7 @@
   :root {
     --primary: #EC0B7F;
     --secondary: #3C2E9C;
-    --bg: #F4F4F8;
+    --bg: #fdfdff;
     --sidebar-bg: #FFFFFF;
     --text: #1A1A2E;
     --text-muted: #6B6B85;
@@ -143,7 +143,6 @@
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 56px;
-    border: 1px solid var(--border);
   }
   .hero-image img {
     width: 100%;
@@ -411,7 +410,7 @@
     justify-content: center;
     padding: 24px;
   }
-  .phase-split-image img { width: 100%; height: auto; object-fit: contain; display: block; }
+  .phase-split-image img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px; }
 
   /* PHASE SUBSECTIONS — User Personas + User Flow nested inside Phase 01 */
   .phase-subsections {
@@ -1192,7 +1191,7 @@
       </div>
       <div class="phase-split">
         <div class="phase-split-image">
-          <img id="phase01-img" src="img/standardimage.png" alt="Research and discovery overview">
+          <img id="phase01-img" src="img/research-photo.png" alt="Research and discovery overview">
         </div>
         <div class="accordion" id="phase01-accordion">
 
