@@ -168,12 +168,99 @@
   .swatch-card .swatch-info { padding: 8px 12px; background: #fff; flex: 1; display: flex; flex-direction: column; justify-content: center; }
   .swatch-card .swatch-hex { font-size: var(--fs-meta); color: var(--text-muted); font-family: monospace; display: block; }
   .swatch-card .swatch-name { font-size: 11px; font-weight: 500; color: var(--text); display: block; line-height: 1.3; }
+
   @media(max-width:1024px){:root{--sidebar-w:280px;}.main{padding:48px 40px;}.stat-cards{grid-template-columns:1fr 1fr;}.palette-grid{grid-template-columns:repeat(3,1fr);}}
-  @media(max-width:768px){body{flex-direction:column;}.hamburger{display:flex;}.sidebar{transform:translateX(-100%);transition:transform 0.3s ease;width:300px;z-index:150;overflow-y:auto;}.sidebar.open{transform:translateX(0);}.main{margin-left:0;padding:72px 24px 48px;}.main>*{max-width:100%;}.hero-image{width:100%!important;}.meta-bar{grid-template-columns:1fr 1fr;}.challenge-grid{grid-template-columns:1fr;padding:28px;}.palette-grid{grid-template-columns:repeat(2,1fr);}.component-grid{grid-template-columns:1fr;}.ds-features{grid-template-columns:1fr;}.a11y-checks{grid-template-columns:1fr;}.case-nav{flex-direction:column;gap:16px;}}
+  @media(max-width:768px){
+body{flex-direction:column;}.hamburger{display:flex;}.sidebar{transform:translateX(-100%);transition:transform 0.3s ease;width:300px;z-index:150;overflow-y:auto;}.sidebar.open{transform:translateX(0);}.main{margin-left:0;padding:72px 24px 48px;}.main>*{max-width:100%;}.hero-image{width:100%!important;}.meta-bar{grid-template-columns:1fr 1fr;}.challenge-grid{grid-template-columns:1fr;padding:28px;}.palette-grid{grid-template-columns:repeat(2,1fr);}.component-grid{grid-template-columns:1fr;}.ds-features{grid-template-columns:1fr;}.a11y-checks{grid-template-columns:1fr;}.case-nav{flex-direction:column;gap:16px;}}
   @media(max-width:480px){.main{padding:64px 16px 48px;}.hero-title{font-size:var(--fs-h2);}.stat-cards{grid-template-columns:1fr;}.palette-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* MOBILE NAV BAR */
+  .top-bar {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: #ffffff;
+    border-bottom: 1px solid #ECECF3;
+    z-index: 300;
+    padding: 0 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .top-bar-logo {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .top-bar-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .top-bar-text {}
+  .top-bar-name {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1A1A2E;
+    line-height: 1.2;
+  }
+  .top-bar-role {
+    display: block;
+    font-size: 11px;
+    color: #6B6B85;
+    line-height: 1.2;
+  }
+  .top-bar-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    color: #1A1A2E;
+  }
+  @media (max-width: 768px) {
+    .top-bar { display: flex; }
+    .avatar { display: none; }
+    .sidebar { padding-top: 80px; }
+    .main { padding-top: 80px; }
+  }
+  .phase-subsection { scroll-margin-top: 40px; }
 </style>
 </head>
 <body>
+<nav class="top-bar" id="topBar">
+  <div class="top-bar-left">
+    <div class="top-bar-logo">
+      <img src="img/logo.png" alt="MAP">
+    </div>
+    <div class="top-bar-text">
+      <span class="top-bar-name">Maria Paredes</span>
+      <span class="top-bar-role">Product Designer</span>
+    </div>
+  </div>
+  <button class="top-bar-menu" id="topBarMenu" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+</nav>
+
+
+
 
 <button class="hamburger" id="hamburger" aria-label="Open menu">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -563,9 +650,14 @@
   function toggleSidebar() { sidebar.classList.toggle('open'); overlay.classList.toggle('active'); }
   hamburger.addEventListener('click', toggleSidebar);
   overlay.addEventListener('click', toggleSidebar);
+  const mobileHamburger = document.getElementById('mobileHamburger');
+  if (mobileHamburger) { mobileHamburger.addEventListener('click', toggleSidebar); }
   document.querySelectorAll('.toc a').forEach(a => {
     a.addEventListener('click', () => { if (window.innerWidth <= 768) toggleSidebar(); });
   });
+
+  const topBarMenu = document.getElementById('topBarMenu');
+  if (topBarMenu) { topBarMenu.addEventListener('click', toggleSidebar); }
 </script>
 </body>
 </html>

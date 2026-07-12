@@ -74,8 +74,9 @@
     font-size: var(--fs-ui);
     color: var(--text-muted);
     border-left: none;
-    pointer-events: none;
+    cursor: pointer;
   }
+  .toc a.toc-sub:hover { color: var(--primary); }
   .toc a.toc-sub-item {
     padding-left: 36px;
     font-size: var(--fs-meta);
@@ -309,7 +310,7 @@
   }
 
   /* JOURNEY PHASE — deep dive block */
-  .phase-block {
+  .phase-block { scroll-margin-top: 40px;
     margin-top: 64px;
     padding-top: 56px;
     border-top: 1px solid #6b6b85;
@@ -413,7 +414,7 @@
   .phase-split-image img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px; }
 
   /* PHASE SUBSECTIONS — User Personas + User Flow nested inside Phase 01 */
-  .phase-subsections {
+  .phase-subsections { scroll-margin-top: 40px;
     margin-top: 56px;
     padding-top: 48px;
     border-top: 1px solid #6b6b85;
@@ -978,7 +979,7 @@
   @media (max-width: 768px) {
     body { flex-direction: column; }
 
-    .hamburger { display: flex; }
+    .hamburger { display: none !important; }
 
     .sidebar {
       transform: translateX(-100%);
@@ -1056,9 +1057,96 @@
     display:flex; align-items:center; gap:6px; transition:color 0.2s;
   }
   .case-nav a:hover { color:var(--primary); }
+
+  /* MOBILE NAV BAR */
+  .top-bar {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: #ffffff;
+    border-bottom: 1px solid #ECECF3;
+    z-index: 300;
+    padding: 0 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .top-bar-logo {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .top-bar-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .top-bar-text {}
+  .top-bar-name {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1A1A2E;
+    line-height: 1.2;
+  }
+  .top-bar-role {
+    display: block;
+    font-size: 11px;
+    color: #6B6B85;
+    line-height: 1.2;
+  }
+  .top-bar-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    color: #1A1A2E;
+  }
+  @media (max-width: 768px) {
+    .top-bar { display: flex; }
+    .avatar { display: none; }
+    .sidebar { padding-top: 80px; }
+    .problem-solution-grid { grid-template-columns: 1fr; gap: 16px; }
+    .ps-image { display: none; }
+    .main { padding-top: 80px; }
+  }
+  .phase-subsection { scroll-margin-top: 40px; }
 </style>
 </head>
 <body>
+<nav class="top-bar" id="topBar">
+  <div class="top-bar-left">
+    <div class="top-bar-logo">
+      <img src="img/logo.png" alt="MAP">
+    </div>
+    <div class="top-bar-text">
+      <span class="top-bar-name">Maria Paredes</span>
+      <span class="top-bar-role">Product Designer</span>
+    </div>
+  </div>
+  <button class="top-bar-menu" id="topBarMenu" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+</nav>
+
+
+
 
 <!-- HAMBURGER (mobile) -->
 <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -1599,11 +1687,24 @@
   }
   hamburger.addEventListener('click', toggleSidebar);
   overlay.addEventListener('click', toggleSidebar);
-  document.querySelectorAll('.toc a').forEach(a => {
-    a.addEventListener('click', () => {
+  const mobileHamburger = document.getElementById('mobileHamburger');
+  if (mobileHamburger) { mobileHamburger.addEventListener('click', toggleSidebar); }
+  document.querySelectorAll('.toc a, .toc-sub, .toc-sub-item').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
       if (window.innerWidth <= 768) toggleSidebar();
     });
   });
+
+  const topBarMenu = document.getElementById('topBarMenu');
+  if (topBarMenu) { topBarMenu.addEventListener('click', toggleSidebar); }
 </script>
 </body>
 </html>

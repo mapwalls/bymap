@@ -228,7 +228,6 @@
     color: var(--indigo-tint-text);
     white-space: nowrap;
   }
-  .tool-chip .t-icon { font-size: var(--fs-ui); }
 
   /* SIDEBAR FOOTER */
   .sidebar-footer {
@@ -423,7 +422,7 @@
   @media (max-width: 768px) {
     body { flex-direction: column; }
 
-    .hamburger { display: flex; }
+    .hamburger { display: none !important; }
 
     .sidebar {
       transform: translateX(-100%);
@@ -484,9 +483,93 @@
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
+
+  /* MOBILE NAV BAR */
+  .top-bar {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: #ffffff;
+    border-bottom: 1px solid #ECECF3;
+    z-index: 300;
+    padding: 0 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .top-bar-logo {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .top-bar-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .top-bar-text {}
+  .top-bar-name {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1A1A2E;
+    line-height: 1.2;
+  }
+  .top-bar-role {
+    display: block;
+    font-size: 11px;
+    color: #6B6B85;
+    line-height: 1.2;
+  }
+  .top-bar-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    color: #1A1A2E;
+  }
+  @media (max-width: 768px) {
+    .top-bar { display: flex; }
+    .avatar { display: none; }
+    .sidebar { padding-top: 80px; }
+    .main { padding-top: 80px; }
+  }
 </style>
 </head>
 <body>
+<nav class="top-bar" id="topBar">
+  <div class="top-bar-left">
+    <div class="top-bar-logo">
+      <img src="img/logo.png" alt="MAP">
+    </div>
+    <div class="top-bar-text">
+      <span class="top-bar-name">Maria Paredes</span>
+      <span class="top-bar-role">Product Designer</span>
+    </div>
+  </div>
+  <button class="top-bar-menu" id="topBarMenu" aria-label="Open menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+</nav>
+
+
+
 
 <!-- HAMBURGER (mobile) -->
 <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -633,24 +716,12 @@
 
 <script>
   // CAROUSEL
-  const tools = [
-    { icon: '🎨', label: 'Figma' },
-    { icon: '🤖', label: 'Claude AI' },
-    { icon: '🅰️', label: 'Adobe' },
-    { icon: '⚡', label: 'Figma Make' },
-    { icon: '📊', label: 'Pendo' },
-    { icon: '📝', label: 'Notion' },
-    { icon: '🧩', label: 'Miro' },
-    { icon: '💬', label: 'ChatGPT' },
-    { icon: '📌', label: 'Jira' },
-    { icon: '🧪', label: 'Maze' },
-  ];
+  const tools = ['Figma', 'Claude AI', 'Adobe', 'Figma Make', 'Pendo', 'Notion', 'Miro', 'ChatGPT', 'Jira', 'Maze'];
   const track = document.getElementById('carouselTrack');
-  // Double for seamless loop
   [...tools, ...tools].forEach(t => {
     const chip = document.createElement('div');
     chip.className = 'tool-chip';
-    chip.innerHTML = `<span class="t-icon">${t.icon}</span>${t.label}`;
+    chip.textContent = t;
     track.appendChild(chip);
   });
 
@@ -674,6 +745,8 @@
   }
   hamburger.addEventListener('click', toggleSidebar);
   overlay.addEventListener('click', toggleSidebar);
+  const mobileHamburger = document.getElementById('mobileHamburger');
+  if (mobileHamburger) { mobileHamburger.addEventListener('click', toggleSidebar); }
 
   // Close sidebar on nav link click (mobile)
   document.querySelectorAll('nav a').forEach(a => {
@@ -683,6 +756,9 @@
       if (window.innerWidth <= 768) toggleSidebar();
     });
   });
+
+  const topBarMenu = document.getElementById('topBarMenu');
+  if (topBarMenu) { topBarMenu.addEventListener('click', toggleSidebar); }
 </script>
 </body>
 </html>
