@@ -9,16 +9,16 @@
 <style>
   :root {
     --primary: #EC0B7F;       /* magenta */
-    --secondary: #3C2E9C;     /* indigo */
+    --secondary: #474dec;     /* indigo */
     --bg: #fdfdff;
     --sidebar-bg: #FFFFFF;
     --text: #1A1A2E;          /* off-black */
     --text-muted: #6B6B85;
-    --surface: #F4F4F8;
+    --surface: #FFFFFF;
     --pink-tint: #FDE6F1;
     --pink-tint-text: #993556;
-    --indigo-tint: #E8E6F7;
-    --indigo-tint-text: #3C2E9C;
+    --indigo-tint: #EAEAFC;
+    --indigo-tint-text: #474dec;
     --border: #ECECF3;
     --sidebar-w: 400px;
     /* ── TYPE SCALE ── */
@@ -269,37 +269,35 @@
 
   /* PROJECT CARDS GRID — 2 column */
   .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
-  }
-
-  /* Card 3 spans full width */
-  .project-card:last-child {
-    grid-column: 1 / -1;
   }
 
   .project-card {
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
     transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s;
     box-shadow: 0 1px 3px rgba(26,26,46,0.06);
+    min-height: 320px;
+    border: 1px solid var(--border);
   }
   .project-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 48px rgba(60,46,156,0.12);
+    box-shadow: 0 20px 48px rgba(71,77,236,0.12);
   }
 
-  /* IMAGE TOP — big, colored, screenshot inside */
+  /* IMAGE LEFT */
   .card-image {
     width: 100%;
-    height: 340px;
+    height: 100%;
+    min-height: 280px;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
@@ -319,18 +317,17 @@
   .project-card:hover .card-image img { transform: scale(1.02) translateY(-4px); }
 
   /* Per-card image backgrounds */
-  .card-image.bg-ai { background: linear-gradient(160deg, #E8E6F7 0%, #C8C2EE 100%); }
-  .card-image.bg-nh { background: linear-gradient(160deg, #FDE6F1 0%, #F4B8D8 100%); }
-  .card-image.bg-ds { background: linear-gradient(160deg, #E6EEF8 0%, #C2D4EE 100%); }
+  .card-image.bg-ai { background: #474dec; }
+  .card-image.bg-nh { background: #474dec; }
+  .card-image.bg-ds { background: #474dec; }
 
-  /* INFO BOTTOM */
+  /* INFO RIGHT */
   .card-content {
-    padding: 24px 28px 28px;
+    padding: 40px 40px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    flex: 1;
-    border-top: 1px solid var(--border);
+    justify-content: center;
+    gap: 16px;
   }
 
   .card-tags-group { flex-shrink: 0; }
@@ -339,7 +336,6 @@
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
-    margin-bottom: 4px;
   }
   .tag {
     font-size: var(--fs-eyebrow);
@@ -350,38 +346,38 @@
     border-radius: 999px;
     letter-spacing: 0.03em;
   }
-  .tag.accent { background: var(--pink-tint); color: var(--pink-tint-text); }
+  .tag.accent { background: #1A1A2E; color: #fff; }
 
   .card-center-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .card-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: var(--fs-h2);
-    line-height: 1.25;
-    letter-spacing: -0.2px;
+    font-size: var(--fs-h1);
+    line-height: 1.2;
     color: var(--text);
   }
 
   .card-desc {
-    font-size: var(--fs-body);
+    font-size: var(--fs-body-lg);
     line-height: 1.65;
     color: var(--text-muted);
+    max-width: 400px;
   }
 
   .card-cta {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: var(--fs-ui);
-    font-weight: 500;
-    color: #112A46;
+    font-size: var(--fs-body);
+    font-weight: 600;
+    color: var(--text);
     text-decoration: none;
-    margin-top: 4px;
+    margin-top: 8px;
   }
   .card-cta svg { transition: transform 0.2s; }
   .project-card:hover .card-cta svg { transform: translateX(4px); }
@@ -415,7 +411,12 @@
     .main { padding: 40px 40px; }
     .card-title { font-size: var(--fs-h2); }
     .card-desc { font-size: var(--fs-body-lg); }
-    .project-card { grid-template-columns: 1fr 260px; min-height: 320px; }
+    .project-card { grid-template-columns: 1fr; min-height: auto; }
+    .project-card--reversed { grid-template-columns: 1fr; }
+    .project-card--reversed .card-content { order: 1; }
+    .project-card--reversed .card-image { order: 2; }
+    .card-image { min-height: 220px; }
+    .card-content { padding: 28px; }
   }
 
   /* ── MOBILE: 768px ── */
@@ -658,11 +659,8 @@
       </div>
     </a>
 
-    <!-- Card 2 -->
-    <a class="project-card" href="case-2.html">
-      <div class="card-image bg-nh">
-        <img src="img/NewHiresCard.png" alt="New Hires Onboarding">
-      </div>
+    <!-- Card 2 — content left, image right -->
+    <a class="project-card project-card--reversed" href="case-2.html">
       <div class="card-content">
         <div class="card-tags-group">
           <div class="card-tags">
@@ -679,12 +677,15 @@
           </div>
         </div>
       </div>
+      <div class="card-image bg-nh">
+        <img src="img/NewHiresCard.png" alt="New Hires Onboarding">
+      </div>
     </a>
 
     <!-- Card 3 -->
     <a class="project-card" href="case-3.html">
-      <div class="card-image bg-ds">
-        <img src="img/DesignSystemCard.png" alt="GS Design System">
+      <div class="card-image bg-ds" style="padding:0; align-items:stretch;">
+        <img src="img/DS-PREVIEW.png" alt="GS Design System" style="width:100%; height:100%; object-fit:cover; object-position:top; border-radius:0;">
       </div>
       <div class="card-content">
         <div class="card-tags-group">
