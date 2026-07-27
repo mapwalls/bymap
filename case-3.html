@@ -239,7 +239,7 @@ body{flex-direction:column;}.hamburger{display:flex;}.sidebar{transform:translat
   }
   @media (max-width: 768px) {
     .top-bar { display: flex; }
-    .avatar { display: none; }
+    .avatar { display: block; text-decoration: none; display: none; }
     .sidebar { padding-top: 80px; }
     .main { padding-top: 80px; }
   }
@@ -253,9 +253,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav class="top-bar" id="topBar">
   <div class="top-bar-left">
-    <div class="top-bar-logo">
+    <a href="index.html" style="display:block;text-decoration:none;">
       <img src="img/logo.png" alt="MAP">
-    </div>
+    </a>
     <div class="top-bar-text">
       <span class="top-bar-name">Maria Paredes</span>
       <span class="top-bar-role">Product Designer</span>
