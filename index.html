@@ -430,8 +430,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width: 768px) {
     body { flex-direction: column; }
 
-    .hamburger { display: none !important; }
-
+    
     .sidebar {
       transform: translateX(-100%);
       transition: transform 0.3s ease;
@@ -554,6 +553,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .sidebar { padding-top: 80px; }
     .main { padding-top: 80px; }
   }
+
+  /* Mobile menu polish */
+  .top-bar-menu:focus { outline: none; }
+  .top-bar-menu:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 8px; }
+  @media (max-width: 768px) {
+    body.menu-open { overflow: hidden; }
+    .sidebar { top: 60px; min-height: 0; height: calc(100vh - 60px); height: calc(100dvh - 60px); padding-top: 32px; box-shadow: 0 12px 40px rgba(26,26,46,0.14); }
+    .sidebar-overlay { top: 60px; }
+    .sidebar-overlay.active { display: block; }
+  }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF486Z0G3G"></script>
@@ -572,7 +581,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav class="top-bar" id="topBar">
   <div class="top-bar-left">
-    <a href="index.html" style="display:block;text-decoration:none;">
+    <a href="index.html" class="top-bar-logo" style="text-decoration:none;">
       <img src="img/logo.png" alt="MAP">
     </a>
     <div class="top-bar-text">
@@ -592,12 +601,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<!-- HAMBURGER (mobile) -->
-<button class="hamburger" id="hamburger" aria-label="Open menu">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
-    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-  </svg>
-</button>
 <div class="sidebar-overlay" id="overlay"></div>
 
 <!-- SIDEBAR -->
@@ -756,18 +759,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   // HAMBURGER TOGGLE
-  const hamburger = document.getElementById('hamburger');
   const sidebar = document.querySelector('.sidebar');
   const overlay = document.getElementById('overlay');
+  const menuBtn = document.getElementById('topBarMenu');
+  const iconHamburger = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+  const iconClose = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>';
 
   function toggleSidebar() {
-    sidebar.classList.toggle('open');
-    overlay.classList.toggle('active');
+    const isOpen = sidebar.classList.toggle('open');
+    overlay.classList.toggle('active', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
+    if (menuBtn) {
+      menuBtn.innerHTML = isOpen ? iconClose : iconHamburger;
+      menuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      menuBtn.setAttribute('aria-expanded', isOpen);
+    }
   }
-  hamburger.addEventListener('click', toggleSidebar);
   overlay.addEventListener('click', toggleSidebar);
-  const mobileHamburger = document.getElementById('mobileHamburger');
-  if (mobileHamburger) { mobileHamburger.addEventListener('click', toggleSidebar); }
+  if (menuBtn) { menuBtn.addEventListener('click', toggleSidebar); }
 
   // Close sidebar on nav link click (mobile)
   document.querySelectorAll('nav a').forEach(a => {
@@ -778,8 +787,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  const topBarMenu = document.getElementById('topBarMenu');
-  if (topBarMenu) { topBarMenu.addEventListener('click', toggleSidebar); }
 </script>
 </body>
 </html>
