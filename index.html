@@ -1,815 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K2FJXDMW');</script>
-<!-- End Google Tag Manager -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maria · Product Designer</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maria Paredes · Product Designer</title>
+<meta name="description" content="Maria Paredes, Senior Product Designer. Selected work, results and the way she thinks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --primary: #EC0B7F;       /* magenta */
-    --secondary: #474dec;     /* indigo */
-    --bg: #fbfbfb;
-    --sidebar-bg: #FFFFFF;
-    --text: #1A1A2E;          /* off-black */
-    --text-muted: #6B6B85;
-    --surface: #FFFFFF;
-    --pink-tint: #FDE6F1;
-    --pink-tint-text: #993556;
-    --indigo-tint: #EAEAFC;
-    --indigo-tint-text: #474dec;
-    --border: #ECECF3;
-    --sidebar-w: 400px;
-    /* ── TYPE SCALE ── */
-    --fs-hero: 48px;
-    --fs-display: 40px;
-    --fs-h1: 32px;
-    --fs-h2: 24px;
-    --fs-h3: 18px;
-    --fs-body-lg: 16px;
-    --fs-body: 14px;
-    --fs-ui: 13px;
-    --fs-meta: 12px;
-    --fs-eyebrow: 11px;
-    --fs-icon: 20px;
-    --fs-icon-lg: 64px;
-    --fs-icon-xl: 80px;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    display: flex;
-  }
-
-  /* ── SIDEBAR ── */
-  .sidebar {
-    width: var(--sidebar-w);
-    min-height: 100vh;
-    background: var(--sidebar-bg);
-    border-right: 1px solid var(--border);
-    position: fixed;
-    top: 0; left: 0;
-    display: flex;
-    flex-direction: column;
-    padding: 48px 36px;
-    z-index: 100;
-  }
-
-  .sidebar-top { flex: 1; }
-
-  .avatar { display: block; text-decoration: none;
-    width: 64px; height: 64px;
-    margin-bottom: 28px;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
-  .sidebar h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: var(--fs-h1);
-    line-height: 1.15;
-    margin-bottom: 6px;
-    letter-spacing: -0.3px;
-  }
-  .sidebar h1 em {
-    font-style: normal;
-    color: var(--primary);
-  }
-  .role-label {
-    font-size: var(--fs-ui);
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--secondary);
-    margin-bottom: 20px;
-  }
-  .sidebar p.bio {
-    font-size: var(--fs-body);
-    line-height: 1.7;
-    color: var(--text-muted);
-    margin-bottom: 16px;
-  }
-  .social-links { display: flex; gap: 16px; margin-bottom: 20px; }
-  .social-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: var(--fs-ui); font-weight: 500;
-    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
-  }
-  .social-link:hover { color: var(--primary); }
-
-  /* NAV */
-  nav { margin-bottom: 20px; }
-  nav a {
-    display: block;
-    font-size: var(--fs-body);
-    font-weight: 500;
-    color: var(--text-muted);
-    text-decoration: none;
-    padding: 8px 0;
-    border-bottom: 1px solid transparent;
-    transition: color 0.2s, padding-left 0.2s;
-  }
-  nav a:hover, nav a.active {
-    color: var(--primary);
-    padding-left: 4px;
-  }
-  nav a.active { font-weight: 700; }
-
-  /* STATUS */
-  .status-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: #E6F7EC;
-    color: #1F8A4C;
-    font-size: var(--fs-meta);
-    font-weight: 500;
-    padding: 6px 14px;
-    border-radius: 999px;
-    margin-bottom: 24px;
-  }
-  .status-dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: #22A65A;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%,100% { opacity:1; transform: scale(1); }
-    50% { opacity:0.6; transform: scale(1.2); }
-  }
-
-  /* COPY EMAIL BTN — removed, replaced by email-row */
-
-  /* SIDEBAR FOOTER */
-  .sidebar-footer {
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-  }
-
-  .email-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    cursor: pointer;
-    margin-bottom: 24px;
-    padding: 4px 0;
-  }
-  .email-row:hover .email-text { color: var(--primary); }
-  .email-text {
-    font-size: var(--fs-ui);
-    font-weight: 500;
-    color: var(--text);
-    transition: color 0.2s;
-    word-break: break-all;
-  }
-  .email-icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-muted);
-    flex-shrink: 0;
-    padding: 4px;
-    border-radius: 6px;
-    transition: color 0.2s, background 0.2s;
-    display: flex;
-    align-items: center;
-  }
-  .email-icon-btn:hover {
-    color: var(--primary);
-    background: var(--pink-tint);
-  }
-  .tools-label {
-    font-size: var(--fs-eyebrow);
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 14px;
-  }
-  .carousel-wrapper {
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
-  }
-  .carousel-track {
-    display: flex;
-    gap: 16px;
-    animation: scroll 18s linear infinite;
-    width: max-content;
-  }
-  @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  .tool-chip {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--indigo-tint);
-    border: none;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: var(--fs-eyebrow);
-    font-weight: 500;
-    color: var(--indigo-tint-text);
-    white-space: nowrap;
-  }
-
-  /* SIDEBAR FOOTER */
-  .sidebar-footer {
-    margin-top: 32px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    font-size: var(--fs-meta);
-    color: var(--text-muted);
-  }
-
-  /* ── MAIN CONTENT ── */
-  .main {
-    margin-left: var(--sidebar-w);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 48px 64px;
-    min-height: 100vh;
-    background: var(--bg);
-  }
-
-  .main > * {
-    width: 100%;
-    max-width: 1100px;
-  }
-
-  .section-header {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: var(--fs-ui);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--secondary);
-    margin-bottom: 28px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  /* PROJECT CARDS GRID — 2 column */
-  .projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .project-card {
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s;
-    box-shadow: 0 1px 3px rgba(26,26,46,0.06);
-    min-height: 320px;
-    border: 1px solid var(--border);
-  }
-  .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 48px rgba(71,77,236,0.12);
-  }
-
-  /* IMAGE LEFT */
-  .card-image {
-    width: 100%;
-    height: 100%;
-    min-height: 280px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 32px 32px 0;
-    position: relative;
-  }
-  .card-image img {
-    width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 12px 12px 0 0;
-    transition: transform 0.4s ease;
-    display: block;
-  }
-  .project-card:hover .card-image img { transform: scale(1.02) translateY(-4px); }
-
-  /* Per-card image backgrounds */
-  .card-image.bg-ai { background: #474dec; }
-  .card-image.bg-nh { background: #474dec; }
-  .card-image.bg-ds { background: #474dec; }
-  .card-image.bg-be { background: #474dec; }
-
-  /* INFO RIGHT */
-  .card-content {
-    padding: 40px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  .card-tags-group { flex-shrink: 0; }
-
-  .card-tags {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .tag {
-    font-size: var(--fs-eyebrow);
-    font-weight: 500;
-    background: var(--indigo-tint);
-    color: var(--indigo-tint-text);
-    padding: 4px 10px;
-    border-radius: 999px;
-    letter-spacing: 0.03em;
-  }
-  .tag.accent { background: #1A1A2E; color: #fff; }
-
-  .card-center-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: var(--fs-h1);
-    line-height: 1.2;
-    color: var(--text);
-  }
-
-  .card-desc {
-    font-size: var(--fs-body-lg);
-    line-height: 1.65;
-    color: var(--text-muted);
-    max-width: 400px;
-  }
-
-  .card-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: var(--fs-body);
-    font-weight: 600;
-    color: var(--text);
-    text-decoration: none;
-    margin-top: 8px;
-  }
-  .card-cta svg { transition: transform 0.2s; }
-  .project-card:hover .card-cta svg { transform: translateX(4px); }
-
-  /* ── HAMBURGER BUTTON (mobile only) ── */
-  .hamburger {
-    display: none;
-    position: fixed;
-    top: 16px; left: 16px;
-    z-index: 200;
-    background: var(--primary);
-    border: none;
-    border-radius: 50%;
-    width: 44px; height: 44px;
-    cursor: pointer;
-    align-items: center; justify-content: center;
-    box-shadow: 0 2px 12px rgba(236,11,127,0.25);
-  }
-  .hamburger svg { display: block; }
-  .sidebar-overlay {
-    display: none;
-    position: fixed; inset: 0;
-    background: rgba(26,26,46,0.4);
-    z-index: 99;
-  }
-  .sidebar-overlay.active { display: block; }
-
-  /* ── TABLET: 1024px ── */
-  @media (max-width: 1024px) {
-    :root { --sidebar-w: 300px; }
-    .main { padding: 40px 40px; }
-    .card-title { font-size: var(--fs-h2); }
-    .card-desc { font-size: var(--fs-body-lg); }
-    .project-card { grid-template-columns: 1fr; min-height: auto; }
-    .project-card--reversed { grid-template-columns: 1fr; }
-    .project-card--reversed .card-content { order: 1; }
-    .project-card--reversed .card-image { order: 2; }
-    .card-image { min-height: 220px; }
-    .card-content { padding: 28px; }
-  }
-
-  /* ── MOBILE: 768px ── */
-  @media (max-width: 768px) {
-    body { flex-direction: column; }
-
-    
-    .sidebar {
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      width: 300px;
-      z-index: 150;
-    }
-    .sidebar.open { transform: translateX(0); }
-
-    .main {
-      margin-left: 0;
-      padding: 72px 24px 40px;
-      min-height: 100vh;
-    }
-
-    .main > * { max-width: 100%; }
-
-    .project-card {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-    .card-image {
-      height: 220px;
-      order: -1;
-    }
-    .card-content { padding: 24px; gap: 16px; }
-    .card-title { font-size: var(--fs-h2); }
-    .card-desc { font-size: var(--fs-body); margin-bottom: 8px; }
-    .section-header { margin-bottom: 20px; }
-  }
-
-  /* ── SMALL MOBILE: 480px ── */
-  @media (max-width: 480px) {
-    .main { padding: 64px 16px 32px; }
-    .card-content { padding: 20px; }
-    .card-title { font-size: var(--fs-h3); }
-    .card-image { height: 180px; }
-  }
-
-  /* ── TOAST ── */
-  .toast {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(80px);
-    background: var(--secondary);
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 999px;
-    font-size: var(--fs-ui);
-    font-weight: 500;
-    opacity: 0;
-    transition: all 0.35s cubic-bezier(.22,.68,0,1.2);
-    pointer-events: none;
-    z-index: 999;
-  }
-  .toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  /* MOBILE NAV BAR */
-  .top-bar {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 60px;
-    background: #ffffff;
-    border-bottom: 1px solid #ECECF3;
-    z-index: 300;
-    padding: 0 16px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .top-bar-left {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
-  .top-bar-logo {
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .top-bar-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  .top-bar-text {}
-  .top-bar-name {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: #1A1A2E;
-    line-height: 1.2;
-  }
-  .top-bar-role {
-    display: block;
-    font-size: 11px;
-    color: #6B6B85;
-    line-height: 1.2;
-  }
-  .top-bar-menu {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
-    display: flex;
-    align-items: center;
-    color: #1A1A2E;
-  }
-  @media (max-width: 768px) {
-    .top-bar { display: flex; }
-    .avatar { display: block; text-decoration: none; display: none; }
-    .sidebar { padding-top: 80px; }
-    .main { padding-top: 80px; }
-  }
-
-  /* Mobile menu polish */
-  .top-bar-menu:focus { outline: none; }
-  .top-bar-menu:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 8px; }
-  @media (max-width: 768px) {
-    body.menu-open { overflow: hidden; }
-    .sidebar { top: 60px; min-height: 0; height: calc(100vh - 60px); height: calc(100dvh - 60px); padding-top: 32px; box-shadow: 0 12px 40px rgba(26,26,46,0.14); }
-    .sidebar-overlay { top: 60px; }
-    .sidebar-overlay.active { display: block; }
-  }
-</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NF486Z0G3G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-NF486Z0G3G');
-</script>
-<script src="https://t.contentsquare.net/uxa/7a04c337af5e3.js" defer></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2FJXDMW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<nav class="top-bar" id="topBar">
-  <div class="top-bar-left">
-    <a href="index.html" class="top-bar-logo" style="text-decoration:none;">
-      <img src="img/logo.png" alt="MAP">
-    </a>
-    <div class="top-bar-text">
-      <span class="top-bar-name">Maria Paredes</span>
-      <span class="top-bar-role">Product Designer</span>
-    </div>
+
+<header class="nav">
+  <a class="logo" href="#top" aria-label="Maria Paredes, home">map<span>.</span></a>
+  <nav class="links" aria-label="Main">
+    <a href="#work" data-t="nav_work">Work</a>
+    <a href="#experience" data-t="nav_exp">Experience</a>
+    <a href="#about" data-t="nav_about">About</a>
+    <a href="#contact" data-t="nav_contact">Contact</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false">ES</button>
   </div>
-  <button class="top-bar-menu" id="topBarMenu" aria-label="Open menu">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <line x1="3" y1="6" x2="21" y2="6"/>
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
-    </svg>
-  </button>
-</nav>
+</header>
 
+<main id="top">
+  <section class="hero" id="hero" data-theme="cream" aria-labelledby="h1">
+    <h1 id="h1" class="split"><span class="line" data-t="h1a">Complex products.</span><span class="line" data-t="h1b">Clear thinking.</span></h1>
+    <p class="byline"><span data-t="byline">Maria Paredes · Senior Product Designer · Bucaramanga, Colombia</span></p>
+    <button class="toy walker" id="walker" type="button" aria-label="Godzilla toy: drag me through the headline"><img src="assets/godzilla.webp" alt="" width="720" height="677" draggable="false"></button>
+    <p class="cue"><span data-t="cue">scroll</span> <span aria-hidden="true">↓</span></p>
+  </section>
 
+  <section class="say" data-theme="cream" aria-label="Intro">
+    <p class="read" data-t="read1">Hello, I'm Maria. For 8+ years I've turned complex B2B products in payroll, HR and banking into things people can actually use.</p>
+  </section>
 
+  <section class="nums-sec" data-theme="sage" aria-labelledby="nums-title">
+    <p class="read small" id="nums-title" data-t="read2">The results I can defend, from analytics, surveys and interviews on shipped work:</p>
+    <ul class="nums">
+      <li><b>91%</b><span data-t="st1">onboarding completion</span></li>
+      <li><b>40→12%</b><span data-t="st2">incomplete enrollments</span></li>
+      <li><b>+42%</b><span data-t="st3">users building reports</span></li>
+    </ul>
+  </section>
 
-<div class="sidebar-overlay" id="overlay"></div>
-
-<!-- SIDEBAR -->
-<aside class="sidebar">
-  <div class="sidebar-top">
-    <a href="index.html" class="avatar">
-      <img src="img/logo.png" alt="Maria logo">
-    </a>
-    <h1>Hey! I'm <em>Maria.</em><br>Product Designer.</h1>
-    <p class="bio">8+ years of experience working in banking, B2B clients and startups making web and mobile experiences.</p>
-
-    <div class="status-pill">
-      <span class="status-dot"></span>
-      Available for work
+  <section class="ride" data-theme="cream" aria-label="Skills">
+    <p class="read" data-t="read3">I move between research, UX, UI and systems, and keep the thread clear.</p>
+    <div class="track" id="track" aria-hidden="true"><svg id="trackSvg" preserveAspectRatio="none"><path id="trackPath" fill="none" stroke="#0F0F10" stroke-width="3.4" stroke-linecap="round"/></svg>
+      <span class="chip">UX design</span><span class="chip">UI design</span><span class="chip">Design systems</span><span class="chip">User research</span><span class="chip">B2B flows</span><span class="chip">AI workflows</span>
     </div>
+    <ul class="sr-only"><li>UX design</li><li>UI design</li><li>Design systems</li><li>User research</li><li>B2B flows</li><li>AI workflows</li></ul>
+  </section>
 
-    <nav>
-      <a href="#work" class="active">Work</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
-
-  <!-- BOTTOM: email + carousel -->
-  <div class="sidebar-footer">
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/mapwalls/" target="_blank" class="social-link" aria-label="LinkedIn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://www.behance.net/mapwalls" target="_blank" class="social-link" aria-label="Behance">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.41 1.93-.28.55-.67 1-1.16 1.35-.48.348-1.05.6-1.69.767-.63.168-1.29.254-1.99.254H0V4.51l6.938-.007zm-.34 5.888c.577 0 1.05-.14 1.414-.425.367-.28.55-.72.55-1.32 0-.33-.06-.61-.173-.836-.116-.23-.27-.41-.47-.55-.2-.14-.43-.24-.69-.3-.27-.06-.55-.09-.84-.09H3.5v3.52h3.098zm.18 6.018c.32 0 .62-.03.9-.09.29-.06.54-.17.76-.31.22-.14.4-.34.53-.59.13-.25.2-.57.2-.96 0-.76-.22-1.31-.67-1.64-.45-.33-1.04-.5-1.76-.5H3.5v4.09h3.278zm9.945-7.07c.51-.53 1.24-.8 2.19-.8.68 0 1.27.17 1.77.52.49.34.84.82 1.04 1.44H16.42c0-.56-.2-1.02-.6-1.33.4-.31.74-.48 1.043-.48zm3.39 5.977c-.13.37-.33.68-.6.94-.26.26-.58.46-.95.6-.37.13-.8.2-1.27.2-.52 0-.98-.08-1.38-.26-.4-.17-.74-.41-1.02-.72-.28-.31-.49-.69-.64-1.12-.15-.44-.22-.92-.22-1.45h8.12c.02-.24.03-.48.03-.74 0-.74-.11-1.41-.32-2.01-.21-.61-.52-1.12-.92-1.55-.4-.43-.89-.76-1.46-.99-.57-.23-1.23-.34-1.97-.34-.72 0-1.38.12-1.97.36-.59.24-1.1.58-1.53 1.02-.43.44-.76.97-.99 1.6-.23.62-.35 1.32-.35 2.08 0 .78.12 1.48.34 2.1.23.62.55 1.15.97 1.58.42.44.92.77 1.52 1.01.59.23 1.26.35 2 .35.99 0 1.84-.23 2.53-.7.69-.47 1.18-1.18 1.48-2.14h-2.38zm-1.02-5.49c-.33 0-.63.06-.9.17-.27.12-.51.28-.72.49-.2.21-.37.46-.49.75-.12.29-.19.62-.2.97h4.53c-.07-.77-.32-1.36-.73-1.76-.42-.41-.93-.62-1.52-.62z"/></svg>
-        Behance
-      </a>
+  <section class="work" id="work" data-theme="cream" aria-labelledby="work-title">
+    <div class="wrap">
+      <header class="sec-head"><p class="eyebrow" data-t="work_eyebrow">Selected work</p><h2 id="work-title" data-t="work_title">Four projects, with the numbers behind them.</h2></header>
+      <article class="case" style="--tint:#E7E8FB;--c1:#2A2BD6;--c2:#8DF2CB">
+        <div class="case-text">
+          <p class="meta"><span data-t="case">Case</span> 01 · Web · Dashboard · AI</p>
+          <h3>AI Custom Reports</h3>
+          <p class="big-num"><b>+42%</b><span data-t="m1">users building reports</span></p>
+          <p class="desc" data-t="c1_desc">A module where HR admins build, manage and generate their own reports, then describe one in plain language and let AI set it up.</p>
+          <div class="actions">
+            <button class="toggle" type="button" aria-expanded="false" aria-controls="p1"><span data-t="btn_think">How I thought about it</span><i class="plus" aria-hidden="true"></i></button>
+            <a class="link" href="https://www.bymap.co/case-1.html" target="_blank" rel="noopener"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="panel" id="p1"><div><dl>
+            <dt data-t="lbl_problem">The problem</dt><dd data-t="c1_p">Clients had a long list of generic reports but couldn't combine values to create their own.</dd>
+            <dt data-t="lbl_decision">My decision</dt><dd data-t="c1_d">I reviewed Pendo data and interviewed HR admins first, then made the call to bring AI into report building and scoped an MVP-first release: a template or an AI-built report.</dd>
+            <dt data-t="lbl_result">The result</dt><dd data-t="c1_r">2,842 users created a report (+42.3%) and building one became ~30% faster than manual configuration.</dd>
+          </dl></div></div>
+        </div>
+        <div class="media"><canvas class="bands" aria-hidden="true"></canvas><img src="https://www.bymap.co/img/FrontMac.png" alt="AI Custom Reports on a desktop screen" loading="lazy"></div>
+      </article>
+      <article class="case" style="--tint:#FDE4F1;--c1:#FF4FA6;--c2:#5B3FD8">
+        <div class="case-text">
+          <p class="meta"><span data-t="case">Case</span> 02 · Mobile app · Payroll &amp; HR</p>
+          <h3>Benefits Enrollment</h3>
+          <p class="big-num"><b>40→12%</b><span data-t="m2">incomplete enrollments</span></p>
+          <p class="desc" data-t="c2_desc">The first fully mobile healthcare benefits enrollment for a payroll &amp; HR platform: a dense desktop process turned into guided steps.</p>
+          <div class="actions">
+            <button class="toggle" type="button" aria-expanded="false" aria-controls="p2"><span data-t="btn_think">How I thought about it</span><i class="plus" aria-hidden="true"></i></button>
+            <a class="link" href="https://www.bymap.co/case-4.html" target="_blank" rel="noopener"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="panel" id="p2"><div><dl>
+            <dt data-t="lbl_problem">The problem</dt><dd data-t="c2_p">Enrollment only existed as a dense web flow. 52% of surveyed employees were missing the total cost per paycheck, and 72% delayed because of too many options or no way to compare plans.</dd>
+            <dt data-t="lbl_decision">My decision</dt><dd data-t="c2_d">One clear step at a time: per-paycheck cost on every plan and tier, side-by-side comparison, and a home card that surfaces progress during open enrollment.</dd>
+            <dt data-t="lbl_result">The result</dt><dd data-t="c2_r">Incomplete or support-assisted enrollments dropped from ~40% to ~12% (product analytics and support data).</dd>
+          </dl></div></div>
+        </div>
+        <div class="media"><canvas class="bands" aria-hidden="true"></canvas><img src="https://www.bymap.co/img/benefits-hero.png" alt="Benefits Enrollment mobile app home screen" loading="lazy"></div>
+      </article>
+      <article class="case" style="--tint:#FFECD9;--c1:#FF8A1F;--c2:#4FA9EA">
+        <div class="case-text">
+          <p class="meta"><span data-t="case">Case</span> 03 · Responsive web · Payroll &amp; HR</p>
+          <h3>New Hires Onboarding</h3>
+          <p class="big-num"><b>91%</b><span data-t="m3">completion rate</span></p>
+          <p class="desc" data-t="c3_desc">A self-guided onboarding for employees and one review dashboard for HR, across desktop, tablet and mobile.</p>
+          <div class="actions">
+            <button class="toggle" type="button" aria-expanded="false" aria-controls="p3"><span data-t="btn_think">How I thought about it</span><i class="plus" aria-hidden="true"></i></button>
+            <a class="link" href="https://www.bymap.co/case-2.html" target="_blank" rel="noopener"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="panel" id="p3"><div><dl>
+            <dt data-t="lbl_problem">The problem</dt><dd data-t="c3_p">Onboarding was scattered across emails, PDFs and portals. New hires didn't know what was left, and HR spent much of its time chasing reminders.</dd>
+            <dt data-t="lbl_decision">My decision</dt><dd data-t="c3_d">After interviewing 11 employees, I designed a step-by-step wizard with save-and-resume and a progress tracker, plus an admin dashboard to approve or reject submissions.</dd>
+            <dt data-t="lbl_result">The result</dt><dd data-t="c3_r">91% completion, onboarding time from 5 to 2 days, 40% faster admin approvals and 70% fewer support requests.</dd>
+          </dl></div></div>
+        </div>
+        <div class="media"><canvas class="bands" aria-hidden="true"></canvas><img src="https://www.bymap.co/img/NewHiresCard.png" alt="New Hires Onboarding on a laptop" loading="lazy"></div>
+      </article>
+      <article class="case" style="--tint:#EEF8C4;--c1:#1F44E6;--c2:#D3FF35">
+        <div class="case-text">
+          <p class="meta"><span data-t="case">Case</span> 04 · Design system · Payroll</p>
+          <h3>GS Design System</h3>
+          <p class="big-num"><b>70+</b><span data-t="m4">components</span></p>
+          <p class="desc" data-t="c4_desc">A single source of truth for a payroll platform used by thousands of HR administrators.</p>
+          <div class="actions">
+            <button class="toggle" type="button" aria-expanded="false" aria-controls="p4"><span data-t="btn_think">How I thought about it</span><i class="plus" aria-hidden="true"></i></button>
+            <a class="link" href="https://www.bymap.co/case-3.html" target="_blank" rel="noopener"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="panel" id="p4"><div><dl>
+            <dt data-t="lbl_problem">The problem</dt><dd data-t="c4_p">The product had grown organically: buttons, forms and tables looked and behaved differently in every module.</dd>
+            <dt data-t="lbl_decision">My decision</dt><dd data-t="c4_d">Audit first, then build tokens, 70+ components and documentation in Figma with variables and auto layout, designed to WCAG 2.1 AA.</dd>
+            <dt data-t="lbl_result">The result</dt><dd data-t="c4_r">Faster design-to-dev handoff, a consistent UI across 4+ product areas and one shared library for designers, developers and PMs.</dd>
+          </dl></div></div>
+        </div>
+        <div class="media"><canvas class="bands" aria-hidden="true"></canvas><img src="https://www.bymap.co/img/components2.png" alt="GS Design System components" loading="lazy"></div>
+      </article>
     </div>
-    <div class="email-row" onclick="copyEmail()">
-      <span class="email-text">paredesmaria.co@gmail.com</span>
-      <button class="email-icon-btn" aria-label="Copy email">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
+  </section>
+
+  <section class="names" data-theme="ink" aria-labelledby="names-title">
+    <p class="read" id="names-title" data-t="read4">From Bucaramanga I work remotely with teams and clients across the United States and Latin America.</p>
+    <ul class="drift" aria-label="Places I've worked">
+      <li style="--x:8%;--y:6%;--s:1.5;--d:0s">Greenshades</li><li style="--x:62%;--y:2%;--s:1;--d:-3s">Singular</li><li style="--x:78%;--y:34%;--s:1.35;--d:-6s">Truelogic</li><li style="--x:20%;--y:44%;--s:1.1;--d:-2s">Bancolombia Empresas</li><li style="--x:48%;--y:62%;--s:1.6;--d:-5s">Xperience Design</li><li style="--x:4%;--y:78%;--s:.95;--d:-8s">Systemico</li><li style="--x:80%;--y:80%;--s:1.05;--d:-4s">Clever Estudio</li>
+    </ul>
+  </section>
+
+  <section class="think" data-theme="cream" aria-labelledby="think-title">
+    <div class="wrap">
+      <header class="sec-head"><p class="eyebrow" data-t="think_eyebrow">Mindset</p><h2 id="think-title" data-t="think_title">How I think</h2></header>
+      <div class="pillars">
+        <div class="pillar"><div class="ico"><svg viewBox="0 0 80 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"><g transform="translate(40 40)"><ellipse rx="9" ry="14" cy="-17"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(60)"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(120)"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(180)"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(240)"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(300)"/><circle r="7" fill="#D3FF35"/></g></g></svg></div><h3 data-t="p1_t">Leadership</h3><p data-t="p1_d">I work alongside product managers, engineers and stakeholders to align design decisions with business goals, guiding teams from research and ideation through delivery with a shared vision.</p></div>
+        <div class="pillar"><div class="ico"><svg viewBox="0 0 80 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 28c10-14 20-14 29 0s19 14 29 0 10-8 10-8"/><path d="M6 46c10-14 20-14 29 0s19 14 29 0 10-8 10-8" stroke="#F3006D"/><path d="M6 64c10-14 20-14 29 0s19 14 29 0 10-8 10-8"/></g></svg></div><h3 data-t="p2_t">Design as strategy</h3><p data-t="p2_d">Design isn't decoration. When it has a seat at the table, shaping roadmaps and connecting user needs to business outcomes, it becomes one of a product team's most powerful tools.</p></div>
+        <div class="pillar"><div class="ico"><svg viewBox="0 0 80 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M40 40c0-4 5-5 7-2s0 9-6 10c-9 1-15-6-14-15 1-11 11-17 21-15 13 3 18 17 13 28"/><path d="M60 52c-3 8-10 13-18 14" stroke="#F3006D"/></g></svg></div><h3 data-t="p3_t">Growth mindset</h3><p data-t="p3_d">I stay genuinely curious. I explore new tools and methods, and right now I'm going deep on how AI is changing the way we research, prototype and build products. That curiosity directly shapes how I design.</p></div>
+      </div>
     </div>
+  </section>
 
-    <div class="tools-label">Tools I use</div>
-    <div class="carousel-wrapper">
-      <div class="carousel-track" id="carouselTrack"></div>
+  <section class="exp" id="experience" data-theme="sage" aria-labelledby="exp-title">
+    <div class="wrap">
+      <header class="sec-head"><p class="eyebrow" data-t="exp_eyebrow">Career</p><h2 id="exp-title" data-t="exp_title">Experience</h2></header>
+      <ol class="timeline">
+        <li class="row"><p class="years">2026</p><div><h3>Senior Product Designer</h3><p class="co">Singular innovation agency (USA &amp; Latam)</p></div><p class="rdesc" data-t="e1_desc">I lead the end-to-end product design process for web and mobile apps, from discovery to delivery. I guide clients through brainstorming and align solutions with user needs and business goals, iterating on proposals with PostHog metrics.</p></li>
+        <li class="row"><p class="years">2021 — 2026</p><div><h3>Senior Product Designer</h3><p class="co">Truelogic / Greenshades (USA)</p></div><p class="rdesc" data-t="e2_desc">Led UX strategy for a payroll and tax management platform, partnering with Product Managers and engineers across discovery, ideation, and delivery. Built and scaled the Design System, used Pendo analytics and customer interviews to prioritize improvements, and leveraged AI tools like Claude to accelerate research synthesis and prototyping.</p></li>
+        <li class="row"><p class="years">2019 — 2021</p><div><h3>UX Lead, UI/UX Designer</h3><p class="co">Xperience Design (Colombia)</p></div><p class="rdesc" data-t="e3_desc">Led the UX team designing digital solutions for Bancolombia Empresas, defining UX strategy from research through final handoff. Conducted user interviews and usability testing to inform iterative design improvements across user flows and high-fidelity mockups.</p></li>
+        <li class="row"><p class="years">2016 — 2018</p><div><h3>UI/UX Designer</h3><p class="co">Systemico Software (Colombia)</p></div><p class="rdesc" data-t="e4_desc">Designed wireframes, user flows, and high-fidelity prototypes for iOS, Android, and responsive web applications across multiple client projects, partnering closely with development teams from concept to launch.</p></li>
+        <li class="row"><p class="years">2015 — 2017</p><div><h3 data-t="e5_role">Graphic &amp; web designer</h3><p class="co">Clever Estudio (Venezuela)</p></div><p class="rdesc" data-t="e5_desc">Designed HTML5/CSS3 websites, e-commerce platforms, and marketing assets, working directly with clients on branding and corporate identity.</p></li>
+        <li class="row"><p class="years">2012 — 2014</p><div><h3 data-t="e6_role">Graphic designer</h3><p class="co">Turepuestoya.com (Venezuela)</p></div><p class="rdesc" data-t="e6_desc">Developed advertising campaigns for companies in the automotive sector.</p></li>
+      </ol>
     </div>
-  </div>
-</aside>
+  </section>
 
-<!-- MAIN -->
-<main class="main">
-  <div class="section-header" id="work">Selected Work</div>
+  <section class="about" id="about" data-theme="cream" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <figure class="portrait"><img src="assets/maria.webp" alt="Portrait of Maria Paredes smiling, wearing glasses" width="624" height="486" loading="lazy"></figure>
+      <div>
+        <p class="eyebrow" data-t="about_eyebrow">About</p>
+        <h2 id="about-title" data-t="about_title">Proactive, motivated and curious.</h2>
+        <p class="lede" data-t="about_text">A proactive, motivated product designer with strong leadership skills and a passion for crafting exceptional user experiences through innovative methodologies. I've worked with a wide variety of clients, delivering complex B2B products in Colombia and the United States.</p>
+        <dl class="facts">
+          <dt data-t="f_loc">Based in</dt><dd data-t="v_loc">Bucaramanga, Colombia · Remote, on-site or open to relocation</dd>
+          <dt data-t="f_lang">Languages</dt><dd data-t="v_lang">Spanish (native), English C1</dd>
+          <dt data-t="f_edu">Education</dt><dd data-t="v_edu">Bachelor's degree in Graphic Design, José María Vargas University (2012)</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
 
-  <div class="projects-grid">
-
-    <!-- Card 1 -->
-    <a class="project-card" href="case-1.html">
-      <div class="card-image bg-ai">
-        <img src="img/AICustomCard.png" alt="AI Custom Reports">
+  <section class="contact" id="contact" data-theme="ink" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title" data-t="contact_title">Love what you do.</h2>
+      <p class="lede" data-t="contact_sub">Open to new opportunities: remote, on-site or relocating.</p>
+      <div class="cta">
+        <button class="btn btn-lime" type="button" id="copy-email"><span id="copy-label" data-t="copy_btn">Copy email</span> <span aria-hidden="true">⧉</span></button>
+        <a class="btn btn-ghost" href="mailto:paredesmaria.co@gmail.com">paredesmaria.co@gmail.com</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/mapwalls/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="https://www.behance.net/mapwalls" target="_blank" rel="noopener">Behance ↗</a>
       </div>
-      <div class="card-content">
-        <div class="card-tags-group">
-          <div class="card-tags">
-            <span class="tag accent">Web Design</span>
-            <span class="tag">Dashboard</span>
-            <span class="tag">AI</span>
-          </div>
-        </div>
-        <div class="card-center-group">
-          <div class="card-title">AI Custom Reports</div>
-          <p class="card-desc">New module for HR administrators to build, manage and generate their own report.</p>
-          <div class="card-cta">
-            Read case study
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Card 2 — content left, image right -->
-    <a class="project-card project-card--reversed" href="case-4.html">
-      <div class="card-content">
-        <div class="card-tags-group">
-          <div class="card-tags">
-            <span class="tag accent">Mobile App</span>
-            <span class="tag">Benefits</span>
-            <span class="tag">Payroll & HR</span>
-          </div>
-        </div>
-        <div class="card-center-group">
-          <div class="card-title">Benefits Enrollment</div>
-          <p class="card-desc">The first fully mobile healthcare benefits enrollment experience, with clear, guided steps.</p>
-          <div class="card-cta">
-            Read case study
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </div>
-      </div>
-      <div class="card-image bg-be">
-        <img src="img/BenefitsCard.png" alt="Benefits Enrollment mobile app screens">
-      </div>
-    </a>
-
-    <!-- Card 3 -->
-    <a class="project-card" href="case-2.html">
-      <div class="card-image bg-nh">
-        <img src="img/NewHiresCard.png" alt="New Hires Onboarding">
-      </div>
-      <div class="card-content">
-        <div class="card-tags-group">
-          <div class="card-tags">
-            <span class="tag accent">Responsive Web</span>
-            <span class="tag">Employees Management</span>
-          </div>
-        </div>
-        <div class="card-center-group">
-          <div class="card-title">New Hires Onboarding</div>
-          <p class="card-desc">Designed an onboarding experience that centralizes employee setup tasks into a single workflow.</p>
-          <div class="card-cta">
-            Read case study
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Card 4 — content left, image right -->
-    <a class="project-card project-card--reversed" href="case-3.html">
-      <div class="card-content">
-        <div class="card-tags-group">
-          <div class="card-tags">
-            <span class="tag accent">Design System</span>
-            <span class="tag">Payroll</span>
-            <span class="tag">Accessibility</span>
-          </div>
-        </div>
-        <div class="card-center-group">
-          <div class="card-title">GS Design System</div>
-          <p class="card-desc">Design system created for a US company.</p>
-          <div class="card-cta">
-            Read case study
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </div>
-      </div>
-      <div class="card-image bg-ds" style="padding:0; align-items:stretch;">
-        <img src="img/DS-PREVIEW.png" alt="GS Design System" style="width:100%; height:100%; object-fit:cover; object-position:top; border-radius:0;">
-      </div>
-    </a>
-    <!-- Card 5 — hidden -->
-
-  </div>
+      <p class="sr-only" id="copy-status" role="status"></p>
+    </div>
+  </section>
 </main>
-
-<!-- TOAST -->
-<div class="toast" id="toast">Email copied!</div>
-
-<script>
-  // CAROUSEL
-  const tools = ['Figma', 'Claude AI', 'Adobe', 'Figma Make', 'Pendo', 'Notion', 'Miro', 'ChatGPT', 'Jira', 'Maze'];
-  const track = document.getElementById('carouselTrack');
-  [...tools, ...tools].forEach(t => {
-    const chip = document.createElement('div');
-    chip.className = 'tool-chip';
-    chip.textContent = t;
-    track.appendChild(chip);
-  });
-
-  // COPY EMAIL
-  function copyEmail() {
-    navigator.clipboard.writeText('paredesmaria.co@gmail.com').then(() => {
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2500);
-    });
-  }
-
-  // HAMBURGER TOGGLE
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.getElementById('overlay');
-  const menuBtn = document.getElementById('topBarMenu');
-  const iconHamburger = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
-  const iconClose = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>';
-
-  function toggleSidebar() {
-    const isOpen = sidebar.classList.toggle('open');
-    overlay.classList.toggle('active', isOpen);
-    document.body.classList.toggle('menu-open', isOpen);
-    if (menuBtn) {
-      menuBtn.innerHTML = isOpen ? iconClose : iconHamburger;
-      menuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-      menuBtn.setAttribute('aria-expanded', isOpen);
-    }
-  }
-  overlay.addEventListener('click', toggleSidebar);
-  if (menuBtn) { menuBtn.addEventListener('click', toggleSidebar); }
-
-  // Close sidebar on nav link click (mobile)
-  document.querySelectorAll('nav a').forEach(a => {
-    a.addEventListener('click', function() {
-      document.querySelectorAll('nav a').forEach(x => x.classList.remove('active'));
-      this.classList.add('active');
-      if (window.innerWidth <= 768) toggleSidebar();
-    });
-  });
-
-</script>
+<footer class="objfoot" data-theme="cream" aria-labelledby="of-title">
+  <div class="ogrid" id="ogrid">
+    <p class="ocap" aria-live="polite"><span class="otitle" id="of-title" data-t="of_title">Objects I love, from my desk</span><span class="otext" id="otext" data-t="of_hint">hover, tap or click one</span></p>
+  </div>
+  <template id="otpl">
+    <button class="obj" type="button" data-cap=""><img alt="" draggable="false"></button>
+  </template>
+  <ul class="sr-only">
+    <li>Godzilla: Handles the big, scary problems.</li><li>Shiba daruma: Sets a goal, falls down, gets back up.</li><li>Dilophosaurus: Details you notice from across the room.</li><li>Dino piñata: Every launch deserves a little celebration.</li><li>Viking duck: If I can't explain it out loud, it isn't clear yet.</li>
+  </ul>
+  <p class="foot"><span>© <span id="year">2026</span> Maria Paredes</span><a href="#top" data-t="back_top">Back to top ↑</a></p>
+</footer>
+<script src="js/main.js"></script>
 </body>
 </html>
