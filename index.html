@@ -7,18 +7,18 @@
 <meta name="description" content="Maria Paredes, Senior Product Designer. Selected work, results and the way she thinks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Instrument+Sans:wght@400;500;600&family=Plaster&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
 <header class="nav">
-  <a class="logo" href="#top" aria-label="Maria Paredes, home">map<span>.</span></a>
+  <a class="logo" href="#top" aria-label="Maria Paredes, home"><img src="img/logo.png" alt="" width="687" height="433"></a>
   <nav class="links" aria-label="Main">
     <a href="#work" data-t="nav_work">Work</a>
     <a href="#experience" data-t="nav_exp">Experience</a>
-    <a href="#about" data-t="nav_about">About</a>
+    <a href="about.html" data-t="nav_about">About</a>
     <a href="#contact" data-t="nav_contact">Contact</a>
   </nav>
   <div class="lang" role="group" aria-label="Language">
@@ -28,157 +28,158 @@
 </header>
 
 <main id="top">
-  <section class="hero" id="hero" data-theme="cream" aria-labelledby="h1">
-    <h1 id="h1" class="split"><span class="line" data-t="h1a">Complex products.</span><span class="line" data-t="h1b">Clear thinking.</span></h1>
-    <p class="byline"><span data-t="byline">Maria Paredes · Senior Product Designer · Bucaramanga, Colombia</span></p>
-    <button class="toy walker" id="walker" type="button" aria-label="Godzilla toy: drag me through the headline"><img src="assets/godzilla.webp" alt="" width="720" height="677" draggable="false"></button>
+  <section class="hero" id="hero" data-theme="ink" aria-labelledby="h1">
+    <div class="hero-pin" id="heroPin">
+    <h1 id="h1" class="split"><span class="line big" data-t="h1a">Complex</span><span class="line big" data-t="h1c">products</span><span class="l1"><span class="line clear" data-t="h1b">Clear thinking</span><img class="knight" src="assets/knight.webp" alt="" width="877" height="900" aria-hidden="true" hidden></span></h1>
+    <p class="byline"><span data-t="byline">Maria Paredes · Senior Product Designer</span></p>
+    <button class="toy walker" id="walker" type="button" hidden aria-label="Godzilla toy: drag me through the headline"><img src="assets/godzilla.webp" alt="" width="720" height="677" draggable="false"></button>
     <p class="cue"><span data-t="cue">scroll</span> <span aria-hidden="true">↓</span></p>
+    </div>
   </section>
 
   <section class="say" data-theme="cream" aria-label="Intro">
-    <p class="read" data-t="read1">Hello, I'm Maria. For 8+ years I've turned complex B2B products in payroll, HR and banking into things people can actually use.</p>
+    <p class="read" data-t="read1">Hello, I'm Maria. For 9+ years I've turned complex products into things people can actually use. Lately, that means designing how people work with AI.</p>
+    <figure class="polaroid" id="polaroid"><img class="pic" src="assets/maria-hello-portrait.webp" alt="Maria Paredes smiling, sitting against a wall painted with blue waves" width="600" height="800" loading="lazy"><img class="frame" src="assets/polaroid-frame.webp" alt="" aria-hidden="true" width="562" height="892" loading="lazy"></figure>
   </section>
 
-  <section class="nums-sec" data-theme="sage" aria-labelledby="nums-title">
-    <p class="read small" id="nums-title" data-t="read2">The results I can defend, from analytics, surveys and interviews on shipped work:</p>
-    <ul class="nums">
-      <li><b>91%</b><span data-t="st1">onboarding completion</span></li>
-      <li><b>40→12%</b><span data-t="st2">incomplete enrollments</span></li>
-      <li><b>+42%</b><span data-t="st3">users building reports</span></li>
-    </ul>
-  </section>
-
-  <section class="ride" data-theme="cream" aria-label="Skills">
-    <p class="read" data-t="read3">I move between research, UX, UI and systems, and keep the thread clear.</p>
-    <div class="track" id="track" aria-hidden="true"><svg id="trackSvg" preserveAspectRatio="none"><path id="trackPath" fill="none" stroke="#0F0F10" stroke-width="3.4" stroke-linecap="round"/></svg>
-      <span class="chip">UX design</span><span class="chip">UI design</span><span class="chip">Design systems</span><span class="chip">User research</span><span class="chip">B2B flows</span><span class="chip">AI workflows</span>
-    </div>
-    <ul class="sr-only"><li>UX design</li><li>UI design</li><li>Design systems</li><li>User research</li><li>B2B flows</li><li>AI workflows</li></ul>
-  </section>
-
-  <section class="work" id="work" data-theme="cream" aria-labelledby="work-title">
+  <section class="notes" data-theme="cream" aria-label="Notes to self">
     <div class="wrap">
-      <header class="sec-head"><p class="eyebrow" data-t="work_eyebrow">Selected work</p><h2 id="work-title" data-t="work_title">Four projects, with the numbers behind them.</h2></header>
-      <article class="case" style="--tint:#E7E8FB;--c1:#2A2BD6;--c2:#8DF2CB">
-        <div class="case-text">
-          <p class="meta"><span data-t="case">Case</span> 01 · Web · Dashboard · AI</p>
-          <h3>AI Custom Reports</h3>
-          <p class="big-num"><b>+42%</b><span data-t="m1">users building reports</span></p>
-          <p class="desc" data-t="c1_desc">A module where HR admins build, manage and generate their own reports, then describe one in plain language and let AI set it up.</p>
-          <div class="actions">
-            <button class="toggle" type="button" aria-expanded="false" aria-controls="p1"><span data-t="btn_think">How I thought about it</span><i class="plus" aria-hidden="true"></i></button>
-            <a class="link" href="https://www.bymap.co/case-1.html" target="_blank" rel="noopener"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="panel" id="p1"><div><dl>
-            <dt data-t="lbl_problem">The problem</dt><dd data-t="c1_p">Clients had a long list of generic reports but couldn't combine values to create their own.</dd>
-            <dt data-t="lbl_decision">My decision</dt><dd data-t="c1_d">I reviewed Pendo data and interviewed HR admins first, then made the call to bring AI into report building and scoped an MVP-first release: a template or an AI-built report.</dd>
-            <dt data-t="lbl_result">The result</dt><dd data-t="c1_r">2,842 users created a report (+42.3%) and building one became ~30% faster than manual configuration.</dd>
-          </dl></div></div>
-        </div>
-        <div class="media"><canvas class="bands" aria-hidden="true"></canvas><img src="https://www.bymap.co/img/FrontMac.png" alt="AI Custom Reports on a desktop screen" loading="lazy"></div>
-      </article>
-      <article class="case" style="--tint:#FDE4F1;--c1:#FF4FA6;--c2:#5B3FD8">
-        <div class="case-text">
-          <p class="meta"><span data-t="case">Case</span> 02 · Mobile app · Payroll &amp; HR</p>
-          <h3>Benefits Enrollment</h3>
-          <p class="big-num"><b>40→12%</b><span data-t="m2">incomplete enrollments</span></p>
-          <p class="desc" data-t="c2_desc">The first fully mobile healthcare benefits enrollment for a payroll &amp; HR platform: a dense desktop process turned into guided steps.</p>
-          <div class="actions">
-            <button class="toggle" type="button" aria-expanded="false" aria-controls="p2"><span data-t="btn_think">How I thought about it</span><i class="plus" aria-hidden="true"></i></button>
-            <a class="link" href="https://www.bymap.co/case-4.html" target="_blank" rel="noopener"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="panel" id="p2"><div><dl>
-            <dt data-t="lbl_problem">The problem</dt><dd data-t="c2_p">Enrollment only existed as a dense web flow. 52% of surveyed employees were missing the total cost per paycheck, and 72% delayed because of too many options or no way to compare plans.</dd>
-            <dt data-t="lbl_decision">My decision</dt><dd data-t="c2_d">One clear step at a time: per-paycheck cost on every plan and tier, side-by-side comparison, and a home card that surfaces progress during open enrollment.</dd>
-            <dt data-t="lbl_result">The result</dt><dd data-t="c2_r">Incomplete or support-assisted enrollments dropped from ~40% to ~12% (product analytics and support data).</dd>
-          </dl></div></div>
-        </div>
-        <div class="media"><canvas class="bands" aria-hidden="true"></canvas><img src="https://www.bymap.co/img/benefits-hero.png" alt="Benefits Enrollment mobile app home screen" loading="lazy"></div>
-      </article>
-      <article class="case" style="--tint:#FFECD9;--c1:#FF8A1F;--c2:#4FA9EA">
-        <div class="case-text">
-          <p class="meta"><span data-t="case">Case</span> 03 · Responsive web · Payroll &amp; HR</p>
-          <h3>New Hires Onboarding</h3>
-          <p class="big-num"><b>91%</b><span data-t="m3">completion rate</span></p>
-          <p class="desc" data-t="c3_desc">A self-guided onboarding for employees and one review dashboard for HR, across desktop, tablet and mobile.</p>
-          <div class="actions">
-            <button class="toggle" type="button" aria-expanded="false" aria-controls="p3"><span data-t="btn_think">How I thought about it</span><i class="plus" aria-hidden="true"></i></button>
-            <a class="link" href="https://www.bymap.co/case-2.html" target="_blank" rel="noopener"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="panel" id="p3"><div><dl>
-            <dt data-t="lbl_problem">The problem</dt><dd data-t="c3_p">Onboarding was scattered across emails, PDFs and portals. New hires didn't know what was left, and HR spent much of its time chasing reminders.</dd>
-            <dt data-t="lbl_decision">My decision</dt><dd data-t="c3_d">After interviewing 11 employees, I designed a step-by-step wizard with save-and-resume and a progress tracker, plus an admin dashboard to approve or reject submissions.</dd>
-            <dt data-t="lbl_result">The result</dt><dd data-t="c3_r">91% completion, onboarding time from 5 to 2 days, 40% faster admin approvals and 70% fewer support requests.</dd>
-          </dl></div></div>
-        </div>
-        <div class="media"><canvas class="bands" aria-hidden="true"></canvas><img src="https://www.bymap.co/img/NewHiresCard.png" alt="New Hires Onboarding on a laptop" loading="lazy"></div>
-      </article>
-      <article class="case" style="--tint:#EEF8C4;--c1:#1F44E6;--c2:#D3FF35">
-        <div class="case-text">
-          <p class="meta"><span data-t="case">Case</span> 04 · Design system · Payroll</p>
-          <h3>GS Design System</h3>
-          <p class="big-num"><b>70+</b><span data-t="m4">components</span></p>
-          <p class="desc" data-t="c4_desc">A single source of truth for a payroll platform used by thousands of HR administrators.</p>
-          <div class="actions">
-            <button class="toggle" type="button" aria-expanded="false" aria-controls="p4"><span data-t="btn_think">How I thought about it</span><i class="plus" aria-hidden="true"></i></button>
-            <a class="link" href="https://www.bymap.co/case-3.html" target="_blank" rel="noopener"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="panel" id="p4"><div><dl>
-            <dt data-t="lbl_problem">The problem</dt><dd data-t="c4_p">The product had grown organically: buttons, forms and tables looked and behaved differently in every module.</dd>
-            <dt data-t="lbl_decision">My decision</dt><dd data-t="c4_d">Audit first, then build tokens, 70+ components and documentation in Figma with variables and auto layout, designed to WCAG 2.1 AA.</dd>
-            <dt data-t="lbl_result">The result</dt><dd data-t="c4_r">Faster design-to-dev handoff, a consistent UI across 4+ product areas and one shared library for designers, developers and PMs.</dd>
-          </dl></div></div>
-        </div>
-        <div class="media"><canvas class="bands" aria-hidden="true"></canvas><img src="https://www.bymap.co/img/components2.png" alt="GS Design System components" loading="lazy"></div>
-      </article>
-    </div>
-  </section>
-
-  <section class="names" data-theme="ink" aria-labelledby="names-title">
-    <p class="read" id="names-title" data-t="read4">From Bucaramanga I work remotely with teams and clients across the United States and Latin America.</p>
-    <ul class="drift" aria-label="Places I've worked">
-      <li style="--x:8%;--y:6%;--s:1.5;--d:0s">Greenshades</li><li style="--x:62%;--y:2%;--s:1;--d:-3s">Singular</li><li style="--x:78%;--y:34%;--s:1.35;--d:-6s">Truelogic</li><li style="--x:20%;--y:44%;--s:1.1;--d:-2s">Bancolombia Empresas</li><li style="--x:48%;--y:62%;--s:1.6;--d:-5s">Xperience Design</li><li style="--x:4%;--y:78%;--s:.95;--d:-8s">Systemico</li><li style="--x:80%;--y:80%;--s:1.05;--d:-4s">Clever Estudio</li>
-    </ul>
-  </section>
-
-  <section class="think" data-theme="cream" aria-labelledby="think-title">
-    <div class="wrap">
-      <header class="sec-head"><p class="eyebrow" data-t="think_eyebrow">Mindset</p><h2 id="think-title" data-t="think_title">How I think</h2></header>
-      <div class="pillars">
-        <div class="pillar"><div class="ico"><svg viewBox="0 0 80 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"><g transform="translate(40 40)"><ellipse rx="9" ry="14" cy="-17"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(60)"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(120)"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(180)"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(240)"/><ellipse rx="9" ry="14" cy="-17" transform="rotate(300)"/><circle r="7" fill="#D3FF35"/></g></g></svg></div><h3 data-t="p1_t">Leadership</h3><p data-t="p1_d">I work alongside product managers, engineers and stakeholders to align design decisions with business goals, guiding teams from research and ideation through delivery with a shared vision.</p></div>
-        <div class="pillar"><div class="ico"><svg viewBox="0 0 80 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 28c10-14 20-14 29 0s19 14 29 0 10-8 10-8"/><path d="M6 46c10-14 20-14 29 0s19 14 29 0 10-8 10-8" stroke="#F3006D"/><path d="M6 64c10-14 20-14 29 0s19 14 29 0 10-8 10-8"/></g></svg></div><h3 data-t="p2_t">Design as strategy</h3><p data-t="p2_d">Design isn't decoration. When it has a seat at the table, shaping roadmaps and connecting user needs to business outcomes, it becomes one of a product team's most powerful tools.</p></div>
-        <div class="pillar"><div class="ico"><svg viewBox="0 0 80 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M40 40c0-4 5-5 7-2s0 9-6 10c-9 1-15-6-14-15 1-11 11-17 21-15 13 3 18 17 13 28"/><path d="M60 52c-3 8-10 13-18 14" stroke="#F3006D"/></g></svg></div><h3 data-t="p3_t">Growth mindset</h3><p data-t="p3_d">I stay genuinely curious. I explore new tools and methods, and right now I'm going deep on how AI is changing the way we research, prototype and build products. That curiosity directly shapes how I design.</p></div>
+      <div class="board" id="board">
+        <!-- pin heads as fractions of the image, so the hand-drawn line can be tied to them -->
+        <img class="board-img" src="assets/notes/board.webp?v=2" width="1833" height="716" loading="lazy"
+             data-pins="0.1231,0.1772 0.3812,0.2626 0.6242,0.0807 0.8949,0.1962"
+             alt="Pink post-its pinned to the wall: a Figma logo with a sparkle, a smiling pink dinosaur, 'Less noise, good design and a little luck!', and a polaroid of Bobby, Maria's golden retriever">
       </div>
     </div>
   </section>
 
-  <section class="exp" id="experience" data-theme="sage" aria-labelledby="exp-title">
+  <section class="flow-sec" data-theme="cream" aria-labelledby="flow-title">
+    <h2 class="read" id="flow-title" data-t="read3">This is my workflow on a project.</h2>
+    <div class="flow-wrap" id="flow">
+      <svg class="thread" aria-hidden="true"><path id="threadPath" pathLength="1"/></svg>
+      <div class="runner" id="runner" aria-hidden="true"><svg class="dino" id="dino" shape-rendering="crispEdges"></svg></div>
+      <ol class="flow">
+        <li class="step">
+          <div class="step-head"><div><span class="num">01</span><h3 data-t="s1_t">Discover</h3></div>
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="M20 20l7 7"/></svg></span></div>
+          <ul><li data-t="s1_a">Reviewed analytics</li><li data-t="s1_b">AI-assisted research synthesis</li><li data-t="s1_c">Insights from client conversations, compiled by the support team</li></ul>
+        </li>
+        <li class="step">
+          <div class="step-head"><div><span class="num">02</span><h3 data-t="s2_t">Define</h3></div>
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 26l2-7 13-13 5 5-13 13z"/><path d="M18 9l5 5"/></svg></span></div>
+          <ul><li data-t="s2_a">Synthesized research insights</li><li data-t="s2_b">Opportunity identification</li><li data-t="s2_c">Established MVP scope</li></ul>
+        </li>
+        <li class="step">
+          <div class="step-head"><div><span class="num">03</span><h3 data-t="s3_t">Ideate</h3></div>
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 22c0-4-5-6-5-11a9 9 0 0118 0c0 5-5 7-5 11z"/><path d="M12 26h8"/></svg></span></div>
+          <ul><li data-t="s3_a">User flows</li><li data-t="s3_b">Collaborative brainstorming sessions</li><li data-t="s3_c">Concept generation</li></ul>
+        </li>
+        <li class="step">
+          <div class="step-head"><div><span class="num">04</span><h3 data-t="s4_t">Design</h3></div>
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="8" y="8" width="16" height="16" rx="1"/><path d="M8 4v4M4 8h4M24 4v4M28 8h-4M8 28v-4M4 24h4M24 28v-4M28 24h-4"/></svg></span></div>
+          <ul><li data-t="s4_a">Mockups</li><li data-t="s4_b">Prototyping</li><li data-t="s4_c">Design system implementation</li></ul>
+        </li>
+        <li class="step">
+          <div class="step-head"><div><span class="num">05</span><h3 data-t="s5_t">Test</h3></div>
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="11" r="5"/><path d="M6 27c1-6 5-9 10-9s9 3 10 9z"/></svg></span></div>
+          <ul><li data-t="s5_a">Usability testing</li><li data-t="s5_b">AI-supported feedback analysis</li></ul>
+        </li>
+        <li class="step">
+          <div class="step-head"><div><span class="num">06</span><h3 data-t="s6_t">Support</h3></div>
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M11 16.5l3.5 3.5 7-8"/></svg></span></div>
+          <ul><li data-t="s6_a">Followed front-end work to ensure quality</li></ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="work" id="work" data-theme="cream" aria-labelledby="work-title">
     <div class="wrap">
-      <header class="sec-head"><p class="eyebrow" data-t="exp_eyebrow">Career</p><h2 id="exp-title" data-t="exp_title">Experience</h2></header>
+      <header class="sec-head"><p class="eyebrow" data-t="work_eyebrow">Selected work</p><h2 id="work-title" data-t="work_title">Recent projects, I'm proud of.</h2></header>
+      <article class="case" style="--tint:#E8ECF7;--c1:#5B6CF0;--c2:#E4F98A">
+        <div class="case-text">
+          <p class="meta"><span data-t="case">Case</span> 01 · <span data-t="c5_meta">Web platform · Luxury travel · AI</span></p>
+          <h3>Lux Voyage Trip Hub</h3>
+          <p class="big-num"><b>20%</b><span data-t="m5">less working time, with AI agents gathering client info</span></p>
+          <p class="desc" data-t="c5_desc">An operations hub for a luxury travel agency: calls, emails and WhatsApp messages land in one place, an AI assistant drafts the record, and advisors only review and approve.</p>
+          <div class="actions">
+            <a class="link" href="case-5.html"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="media"><img src="assets/lux-myday.webp" alt="Lux Voyage Trip Hub, the My Day screen with tasks, conversations to review and upcoming departures" loading="lazy"></div>
+      </article>
+      <article class="case" style="--tint:#E3EEFD">
+        <div class="case-text">
+          <p class="meta"><span data-t="case">Case</span> 02 · <span data-t="c6_meta">Web demo · AI shopping agent</span></p>
+          <h3>Tethral Shopper demo</h3>
+          <p class="big-num"><b>4</b><span data-t="m6">steps from a wish to a purchase</span></p>
+          <p class="desc" data-t="c6_desc">An AI shopping agent that works through an MCP, from the site or from Claude and ChatGPT: you add a product and a budget, it finds the stores and prices, and you buy now or get an email when the price drops.</p>
+          <div class="actions">
+            <a class="link" href="case-6.html"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="media"><img src="assets/tethral/pitch.webp" alt="Tethral demo offering to buy Sony headphones from the lowest of four stores" loading="lazy"></div>
+      </article>
+      <article class="case" style="--tint:#E7E8FB;--c1:#2A2BD6;--c2:#8DF2CB">
+        <div class="case-text">
+          <p class="meta"><span data-t="case">Case</span> 03 · Web · Dashboard · AI</p>
+          <h3>AI custom reports</h3>
+          <p class="big-num"><b>+42%</b><span data-t="m1">users building reports</span></p>
+          <p class="desc" data-t="c1_desc">A module where HR admins build, manage and generate their own reports, then describe one in plain language and let AI set it up.</p>
+          <div class="actions">
+            <a class="link" href="case-1.html"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="media"><img src="https://www.bymap.co/img/FrontMac.png" alt="AI Custom Reports on a desktop screen" loading="lazy"></div>
+      </article>
+      <article class="case" style="--tint:#FDE4F1;--c1:#FF4FA6;--c2:#5B3FD8">
+        <div class="case-text">
+          <p class="meta"><span data-t="case">Case</span> 04 · Mobile app · Payroll &amp; HR</p>
+          <h3>Benefits enrollment</h3>
+          <p class="big-num"><b>40→12%</b><span data-t="m2">incomplete enrollments</span></p>
+          <p class="desc" data-t="c2_desc">The first fully mobile healthcare benefits enrollment for a payroll &amp; HR platform: a dense desktop process turned into guided steps.</p>
+          <div class="actions">
+            <a class="link" href="case-4.html"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="media"><img src="https://www.bymap.co/img/benefits-hero.png" alt="Benefits enrollment mobile app home screen" loading="lazy"></div>
+      </article>
+      <article class="case" style="--tint:#E6ECF7">
+        <div class="case-text">
+          <p class="meta"><span data-t="case">Case</span> 05 · <span data-t="c7_meta">Litigation finance · Fund accounting · Internal platform</span></p>
+          <h3>Parabellum Finance</h3>
+          <p class="big-num"><b>5</b><span data-t="m7">back-office flows in one platform, instead of spreadsheets</span></p>
+          <p class="desc" data-t="c7_desc">The internal platform for a litigation funder's back office: invoices, payment tickets, wire instructions, bank reconciliation and month-end reporting in one place, instead of spreadsheets.</p>
+          <div class="actions">
+            <a class="link" href="case-7.html"><span data-t="link_case">Read case study</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="media"><img src="assets/parabellum/inbox.webp" alt="Invoice Inbox with summary cards, filters and the invoices table" loading="lazy"></div>
+      </article>
+      <div class="see-all"><a class="btn btn-ink" href="projects.html"><span data-t="see_all">See all projects</span> <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <section class="names" data-theme="ink" aria-labelledby="names-title">
+    <p class="read" id="names-title" data-t="read4">From Colombia I work remotely with teams and clients across the United States and Latin America.</p>
+    <div class="tools" aria-label="Tools I use">
+      <ul class="tools-track"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg><span>Figma</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><span>Claude</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><span>ChatGPT</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.392 0H13.9L17 4.808 10.444 0H6.949l3.102 6.3L3.494 0H0l3.05 8.131L0 24h3.494L10.05 6.985 6.949 24h3.494L17 5.494 13.899 24h3.493L24 3.672 17.392 0z"/></svg><span>Miro</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.126 16.547c-1.5013-1.4881-1.5013-3.9009 0-5.389l4.0778-4.042c1.2692-1.258 3.205-1.4525 4.6803-.5836.4564.2687.4524.8852.077 1.2573-.3753.372-.988.34-1.4975.1923-.6524-.1891-1.386-.0287-1.9006.4813l-4.0777 4.0419a1.8935 1.8935 0 0 0 0 2.6945c.7506.744 1.9678.744 2.7184 0l8.1555-8.0836c1.5014-1.4882 3.9355-1.4882 5.437 0l4.0778 4.0418c1.5013 1.4881 1.5013 3.901 0 5.389-1.5014 1.4882-3.9356 1.4882-5.437 0l-1.3593-1.3472-1.699 1.684c-1.2692 1.258-3.205 1.4526-4.6804.5837-.4563-.2687-.4523-.8852-.077-1.2573.3754-.372.988-.34 1.4975-.1923.6524.1892 1.386.0287 1.9006-.4813l1.7476-1.7322c.724-.7175 1.8975-.7175 2.6214 0l1.4078 1.3954c.7507.744 1.9678.744 2.7186 0a1.8936 1.8936 0 0 0 0-2.6945l-4.0779-4.0419c-.7507-.744-1.9678-.744-2.7185 0L6.563 16.5471c-1.5014 1.4882-3.9356 1.4881-5.437 0"/></svg><span>Maze</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.854 14.5 5 9.647.854 5.5A.5.5 0 0 0 0 5.854V8.44a.5.5 0 0 0 .146.353L5 13.647l.147.146L9.854 18.5l.146.147v-.049c.065.03.134.049.207.049h2.586a.5.5 0 0 0 .353-.854L9.854 14.5zm0-5-4-4a.487.487 0 0 0-.409-.144.515.515 0 0 0-.356.21.493.493 0 0 0-.089.288V8.44a.5.5 0 0 0 .147.353l9 9a.5.5 0 0 0 .853-.354v-2.585a.5.5 0 0 0-.146-.354l-5-5zm1-4a.5.5 0 0 0-.854.354V8.44a.5.5 0 0 0 .147.353l4 4a.5.5 0 0 0 .853-.354V9.854a.5.5 0 0 0-.146-.354l-4-4zm12.647 11.515a3.863 3.863 0 0 1-2.232-1.1l-4.708-4.707a.5.5 0 0 0-.854.354v6.585a.5.5 0 0 0 .5.5H23.5a.5.5 0 0 0 .5-.5v-.6c0-.276-.225-.497-.499-.532zm-5.394.032a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6zM.854 15.5a.5.5 0 0 0-.854.354v2.293a.5.5 0 0 0 .5.5h2.293c.222 0 .39-.135.462-.309a.493.493 0 0 0-.109-.545L.854 15.501zM5 14.647.854 10.5a.5.5 0 0 0-.854.353v2.586a.5.5 0 0 0 .146.353L4.854 18.5l.146.147h2.793a.5.5 0 0 0 .353-.854L5 14.647z"/></svg><span>PostHog</span></li><li><span>Pendo</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.25l6.75 6.637V2L12 1.25zm0 0l-6.05 7h12.1l-6.05-7zm0 0L5.25 2v5.887L12 1.25zM5.25 2L0 9l4.416-.68L5.25 2zM0 9l11.959 13.703.008-.014L4.443 9H0zm18.75-7l.834 6.32L24 9l-5.25-7zM24 9h-4.506l-7.523 13.69.029.06L24 9zM12 22.75l-.031-.057-.008.012.039.045zM5.436 9l6.533 13.686L18.564 9H5.436Z"/></svg><span>Sketch</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.85 8.42c-.37-.15-.77-.21-1.18-.2-.26 0-.49 0-.68.01-.2-.01-.34 0-.41.01v3.36c.14.01.27.02.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03.01-.31-.07-.62-.23-.89-.17-.26-.41-.46-.7-.57zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.899c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.391 11.65c-.399.56-.959.98-1.609 1.22-.68.25-1.43.34-2.25.34-.24 0-.4 0-.5-.01s-.24-.01-.43-.01v3.209c.01.07-.04.131-.11.141H5.52c-.08 0-.12-.041-.12-.131V6.42c0-.07.03-.11.1-.11.17 0 .33 0 .56-.01.24-.01.49-.01.76-.02s.56-.01.87-.02c.31-.01.61-.01.91-.01.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.149.42.229.85.229 1.3.001.86-.199 1.57-.6 2.13zm7.091 3.89c-.28.4-.671.709-1.12.891-.49.209-1.09.318-1.811.318-.459 0-.91-.039-1.359-.129-.35-.061-.7-.17-1.02-.32-.07-.039-.121-.109-.111-.189v-1.74c0-.029.011-.07.041-.09.029-.02.06-.01.09.01.39.23.8.391 1.24.49.379.1.779.15 1.18.15.38 0 .65-.051.83-.141.16-.07.27-.24.27-.42 0-.141-.08-.27-.24-.4-.16-.129-.489-.279-.979-.471-.51-.18-.979-.42-1.42-.719-.31-.221-.569-.51-.761-.85-.159-.32-.239-.67-.229-1.021 0-.43.12-.84.341-1.21.25-.4.619-.72 1.049-.92.469-.239 1.059-.349 1.769-.349.41 0 .83.03 1.24.09.3.04.59.12.86.23.039.01.08.05.1.09.01.04.02.08.02.12v1.63c0 .04-.02.08-.05.1-.09.02-.14.02-.18 0-.3-.16-.62-.27-.96-.34-.37-.08-.74-.13-1.12-.13-.2-.01-.41.02-.601.07-.129.03-.24.1-.31.2-.05.08-.08.18-.08.27s.04.18.101.26c.09.11.209.2.34.27.229.12.47.23.709.33.541.18 1.061.43 1.541.73.33.209.6.49.789.83.16.318.24.67.23 1.029.011.471-.129.94-.389 1.331z"/></svg><span>Photoshop</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.53 10.73c-.1-.31-.19-.61-.29-.92-.1-.31-.19-.6-.27-.89-.08-.28-.15-.54-.22-.78h-.02c-.09.43-.2.86-.34 1.29-.15.48-.3.98-.46 1.48-.14.51-.29.98-.44 1.4h2.54c-.06-.211-.14-.46-.23-.721-.09-.269-.18-.559-.27-.859zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zM14.7 16.83h-2.091c-.069.01-.139-.04-.159-.11l-.82-2.38H7.91l-.76 2.35c-.02.09-.1.15-.19.141H5.08c-.11 0-.14-.061-.11-.18L8.19 7.38c.03-.1.06-.21.1-.33.04-.21.06-.43.06-.65-.01-.05.03-.1.08-.11h2.59c.08 0 .12.03.13.08l3.65 10.3c.03.109 0 .16-.1.16zm3.4-.15c0 .11-.039.16-.129.16H16.01c-.1 0-.15-.061-.15-.16v-7.7c0-.1.041-.14.131-.14h1.98c.09 0 .129.05.129.14v7.7zm-.209-9.03c-.231.24-.571.37-.911.35-.33.01-.65-.12-.891-.35-.23-.25-.35-.58-.34-.92-.01-.34.12-.66.359-.89.242-.23.562-.35.892-.35.391 0 .689.12.91.35.22.24.34.56.33.89.01.34-.11.67-.349.92z"/></svg><span>Illustrator</span></li></ul>
+      <ul class="tools-track" aria-hidden="true"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg><span>Figma</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><span>Claude</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><span>ChatGPT</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.392 0H13.9L17 4.808 10.444 0H6.949l3.102 6.3L3.494 0H0l3.05 8.131L0 24h3.494L10.05 6.985 6.949 24h3.494L17 5.494 13.899 24h3.493L24 3.672 17.392 0z"/></svg><span>Miro</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.126 16.547c-1.5013-1.4881-1.5013-3.9009 0-5.389l4.0778-4.042c1.2692-1.258 3.205-1.4525 4.6803-.5836.4564.2687.4524.8852.077 1.2573-.3753.372-.988.34-1.4975.1923-.6524-.1891-1.386-.0287-1.9006.4813l-4.0777 4.0419a1.8935 1.8935 0 0 0 0 2.6945c.7506.744 1.9678.744 2.7184 0l8.1555-8.0836c1.5014-1.4882 3.9355-1.4882 5.437 0l4.0778 4.0418c1.5013 1.4881 1.5013 3.901 0 5.389-1.5014 1.4882-3.9356 1.4882-5.437 0l-1.3593-1.3472-1.699 1.684c-1.2692 1.258-3.205 1.4526-4.6804.5837-.4563-.2687-.4523-.8852-.077-1.2573.3754-.372.988-.34 1.4975-.1923.6524.1892 1.386.0287 1.9006-.4813l1.7476-1.7322c.724-.7175 1.8975-.7175 2.6214 0l1.4078 1.3954c.7507.744 1.9678.744 2.7186 0a1.8936 1.8936 0 0 0 0-2.6945l-4.0779-4.0419c-.7507-.744-1.9678-.744-2.7185 0L6.563 16.5471c-1.5014 1.4882-3.9356 1.4881-5.437 0"/></svg><span>Maze</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.854 14.5 5 9.647.854 5.5A.5.5 0 0 0 0 5.854V8.44a.5.5 0 0 0 .146.353L5 13.647l.147.146L9.854 18.5l.146.147v-.049c.065.03.134.049.207.049h2.586a.5.5 0 0 0 .353-.854L9.854 14.5zm0-5-4-4a.487.487 0 0 0-.409-.144.515.515 0 0 0-.356.21.493.493 0 0 0-.089.288V8.44a.5.5 0 0 0 .147.353l9 9a.5.5 0 0 0 .853-.354v-2.585a.5.5 0 0 0-.146-.354l-5-5zm1-4a.5.5 0 0 0-.854.354V8.44a.5.5 0 0 0 .147.353l4 4a.5.5 0 0 0 .853-.354V9.854a.5.5 0 0 0-.146-.354l-4-4zm12.647 11.515a3.863 3.863 0 0 1-2.232-1.1l-4.708-4.707a.5.5 0 0 0-.854.354v6.585a.5.5 0 0 0 .5.5H23.5a.5.5 0 0 0 .5-.5v-.6c0-.276-.225-.497-.499-.532zm-5.394.032a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6zM.854 15.5a.5.5 0 0 0-.854.354v2.293a.5.5 0 0 0 .5.5h2.293c.222 0 .39-.135.462-.309a.493.493 0 0 0-.109-.545L.854 15.501zM5 14.647.854 10.5a.5.5 0 0 0-.854.353v2.586a.5.5 0 0 0 .146.353L4.854 18.5l.146.147h2.793a.5.5 0 0 0 .353-.854L5 14.647z"/></svg><span>PostHog</span></li><li><span>Pendo</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.25l6.75 6.637V2L12 1.25zm0 0l-6.05 7h12.1l-6.05-7zm0 0L5.25 2v5.887L12 1.25zM5.25 2L0 9l4.416-.68L5.25 2zM0 9l11.959 13.703.008-.014L4.443 9H0zm18.75-7l.834 6.32L24 9l-5.25-7zM24 9h-4.506l-7.523 13.69.029.06L24 9zM12 22.75l-.031-.057-.008.012.039.045zM5.436 9l6.533 13.686L18.564 9H5.436Z"/></svg><span>Sketch</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.85 8.42c-.37-.15-.77-.21-1.18-.2-.26 0-.49 0-.68.01-.2-.01-.34 0-.41.01v3.36c.14.01.27.02.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03.01-.31-.07-.62-.23-.89-.17-.26-.41-.46-.7-.57zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.899c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.391 11.65c-.399.56-.959.98-1.609 1.22-.68.25-1.43.34-2.25.34-.24 0-.4 0-.5-.01s-.24-.01-.43-.01v3.209c.01.07-.04.131-.11.141H5.52c-.08 0-.12-.041-.12-.131V6.42c0-.07.03-.11.1-.11.17 0 .33 0 .56-.01.24-.01.49-.01.76-.02s.56-.01.87-.02c.31-.01.61-.01.91-.01.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.149.42.229.85.229 1.3.001.86-.199 1.57-.6 2.13zm7.091 3.89c-.28.4-.671.709-1.12.891-.49.209-1.09.318-1.811.318-.459 0-.91-.039-1.359-.129-.35-.061-.7-.17-1.02-.32-.07-.039-.121-.109-.111-.189v-1.74c0-.029.011-.07.041-.09.029-.02.06-.01.09.01.39.23.8.391 1.24.49.379.1.779.15 1.18.15.38 0 .65-.051.83-.141.16-.07.27-.24.27-.42 0-.141-.08-.27-.24-.4-.16-.129-.489-.279-.979-.471-.51-.18-.979-.42-1.42-.719-.31-.221-.569-.51-.761-.85-.159-.32-.239-.67-.229-1.021 0-.43.12-.84.341-1.21.25-.4.619-.72 1.049-.92.469-.239 1.059-.349 1.769-.349.41 0 .83.03 1.24.09.3.04.59.12.86.23.039.01.08.05.1.09.01.04.02.08.02.12v1.63c0 .04-.02.08-.05.1-.09.02-.14.02-.18 0-.3-.16-.62-.27-.96-.34-.37-.08-.74-.13-1.12-.13-.2-.01-.41.02-.601.07-.129.03-.24.1-.31.2-.05.08-.08.18-.08.27s.04.18.101.26c.09.11.209.2.34.27.229.12.47.23.709.33.541.18 1.061.43 1.541.73.33.209.6.49.789.83.16.318.24.67.23 1.029.011.471-.129.94-.389 1.331z"/></svg><span>Photoshop</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.53 10.73c-.1-.31-.19-.61-.29-.92-.1-.31-.19-.6-.27-.89-.08-.28-.15-.54-.22-.78h-.02c-.09.43-.2.86-.34 1.29-.15.48-.3.98-.46 1.48-.14.51-.29.98-.44 1.4h2.54c-.06-.211-.14-.46-.23-.721-.09-.269-.18-.559-.27-.859zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zM14.7 16.83h-2.091c-.069.01-.139-.04-.159-.11l-.82-2.38H7.91l-.76 2.35c-.02.09-.1.15-.19.141H5.08c-.11 0-.14-.061-.11-.18L8.19 7.38c.03-.1.06-.21.1-.33.04-.21.06-.43.06-.65-.01-.05.03-.1.08-.11h2.59c.08 0 .12.03.13.08l3.65 10.3c.03.109 0 .16-.1.16zm3.4-.15c0 .11-.039.16-.129.16H16.01c-.1 0-.15-.061-.15-.16v-7.7c0-.1.041-.14.131-.14h1.98c.09 0 .129.05.129.14v7.7zm-.209-9.03c-.231.24-.571.37-.911.35-.33.01-.65-.12-.891-.35-.23-.25-.35-.58-.34-.92-.01-.34.12-.66.359-.89.242-.23.562-.35.892-.35.391 0 .689.12.91.35.22.24.34.56.33.89.01.34-.11.67-.349.92z"/></svg><span>Illustrator</span></li></ul>
+    </div>
+  </section>
+
+  <section class="exp" id="experience" data-theme="warm" aria-labelledby="exp-title">
+    <div class="wrap">
+      <header class="sec-head exp-head"><div><p class="eyebrow" data-t="exp_eyebrow">Career</p><h2 id="exp-title" data-t="exp_title">Experience</h2></div>
+        <a class="btn btn-ink cv-btn" id="cv-btn" href="assets/cv/maria-paredes-cv-en.pdf" download="Maria-Paredes-CV-EN.pdf"><span data-t="cv_btn">Download my CV</span> <span aria-hidden="true">↓</span></a></header>
       <ol class="timeline">
-        <li class="row"><p class="years">2026</p><div><h3>Senior Product Designer</h3><p class="co">Singular innovation agency (USA &amp; Latam)</p></div><p class="rdesc" data-t="e1_desc">I lead the end-to-end product design process for web and mobile apps, from discovery to delivery. I guide clients through brainstorming and align solutions with user needs and business goals, iterating on proposals with PostHog metrics.</p></li>
+        <li class="row"><p class="years">2026</p><div><h3>Senior Product Designer</h3><p class="co">Singular innovation agency (USA &amp; Latam)</p></div><p class="rdesc" data-t="e1_desc">I lead the end-to-end product design process for web and mobile apps, from discovery to delivery. I guide clients through brainstorming and align solutions with user needs and business goals, iterating on proposals with PostHog metrics. I use Claude to prototype and validate ideas with users.</p></li>
         <li class="row"><p class="years">2021 — 2026</p><div><h3>Senior Product Designer</h3><p class="co">Truelogic / Greenshades (USA)</p></div><p class="rdesc" data-t="e2_desc">Led UX strategy for a payroll and tax management platform, partnering with Product Managers and engineers across discovery, ideation, and delivery. Built and scaled the Design System, used Pendo analytics and customer interviews to prioritize improvements, and leveraged AI tools like Claude to accelerate research synthesis and prototyping.</p></li>
         <li class="row"><p class="years">2019 — 2021</p><div><h3>UX Lead, UI/UX Designer</h3><p class="co">Xperience Design (Colombia)</p></div><p class="rdesc" data-t="e3_desc">Led the UX team designing digital solutions for Bancolombia Empresas, defining UX strategy from research through final handoff. Conducted user interviews and usability testing to inform iterative design improvements across user flows and high-fidelity mockups.</p></li>
         <li class="row"><p class="years">2016 — 2018</p><div><h3>UI/UX Designer</h3><p class="co">Systemico Software (Colombia)</p></div><p class="rdesc" data-t="e4_desc">Designed wireframes, user flows, and high-fidelity prototypes for iOS, Android, and responsive web applications across multiple client projects, partnering closely with development teams from concept to launch.</p></li>
         <li class="row"><p class="years">2015 — 2017</p><div><h3 data-t="e5_role">Graphic &amp; web designer</h3><p class="co">Clever Estudio (Venezuela)</p></div><p class="rdesc" data-t="e5_desc">Designed HTML5/CSS3 websites, e-commerce platforms, and marketing assets, working directly with clients on branding and corporate identity.</p></li>
         <li class="row"><p class="years">2012 — 2014</p><div><h3 data-t="e6_role">Graphic designer</h3><p class="co">Turepuestoya.com (Venezuela)</p></div><p class="rdesc" data-t="e6_desc">Developed advertising campaigns for companies in the automotive sector.</p></li>
       </ol>
-    </div>
-  </section>
-
-  <section class="about" id="about" data-theme="cream" aria-labelledby="about-title">
-    <div class="wrap about-grid">
-      <figure class="portrait"><img src="assets/maria.webp" alt="Portrait of Maria Paredes smiling, wearing glasses" width="624" height="486" loading="lazy"></figure>
-      <div>
-        <p class="eyebrow" data-t="about_eyebrow">About</p>
-        <h2 id="about-title" data-t="about_title">Proactive, motivated and curious.</h2>
-        <p class="lede" data-t="about_text">A proactive, motivated product designer with strong leadership skills and a passion for crafting exceptional user experiences through innovative methodologies. I've worked with a wide variety of clients, delivering complex B2B products in Colombia and the United States.</p>
-        <dl class="facts">
-          <dt data-t="f_loc">Based in</dt><dd data-t="v_loc">Bucaramanga, Colombia · Remote, on-site or open to relocation</dd>
-          <dt data-t="f_lang">Languages</dt><dd data-t="v_lang">Spanish (native), English C1</dd>
-          <dt data-t="f_edu">Education</dt><dd data-t="v_edu">Bachelor's degree in Graphic Design, José María Vargas University (2012)</dd>
-        </dl>
-      </div>
     </div>
   </section>
 
@@ -189,16 +190,15 @@
       <div class="cta">
         <button class="btn btn-lime" type="button" id="copy-email"><span id="copy-label" data-t="copy_btn">Copy email</span> <span aria-hidden="true">⧉</span></button>
         <a class="btn btn-ghost" href="mailto:paredesmaria.co@gmail.com">paredesmaria.co@gmail.com</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/mapwalls/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a class="btn btn-ghost" href="https://www.behance.net/mapwalls" target="_blank" rel="noopener">Behance ↗</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/mapwalls/" target="_blank" rel="noopener"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+        <a class="btn btn-ghost" href="https://www.behance.net/mapwalls" target="_blank" rel="noopener"><svg class="brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.969 16.927a2.561 2.561 0 0 0 1.901.677 2.501 2.501 0 0 0 1.531-.475c.362-.235.636-.584.779-.99h2.585a5.091 5.091 0 0 1-1.9 2.896 5.292 5.292 0 0 1-3.091.88 5.839 5.839 0 0 1-2.284-.433 4.871 4.871 0 0 1-1.723-1.211 5.657 5.657 0 0 1-1.08-1.874 7.057 7.057 0 0 1-.383-2.393c-.005-.8.129-1.595.396-2.349a5.313 5.313 0 0 1 5.088-3.604 4.87 4.87 0 0 1 2.376.563c.661.362 1.231.87 1.668 1.485a6.2 6.2 0 0 1 .943 2.133c.194.821.263 1.666.205 2.508h-7.699c-.063.79.184 1.574.688 2.187ZM6.947 4.084a8.065 8.065 0 0 1 1.928.198 4.29 4.29 0 0 1 1.49.638c.418.303.748.711.958 1.182.241.579.357 1.203.341 1.83a3.506 3.506 0 0 1-.506 1.961 3.726 3.726 0 0 1-1.503 1.287 3.588 3.588 0 0 1 2.027 1.437c.464.747.697 1.615.67 2.494a4.593 4.593 0 0 1-.423 2.032 3.945 3.945 0 0 1-1.163 1.413 5.114 5.114 0 0 1-1.683.807 7.135 7.135 0 0 1-1.928.259H0V4.084h6.947Zm-.235 12.9c.308.004.616-.029.916-.099.268-.062.523-.17.751-.32.223-.154.405-.36.53-.6.152-.31.224-.651.211-.995a2.016 2.016 0 0 0-.665-1.7 2.62 2.62 0 0 0-1.758-.513H3.169v4.227h3.543Zm13.091-8.34a2.042 2.042 0 0 0-1.6-.6 2.418 2.418 0 0 0-1.149.237 2.234 2.234 0 0 0-.7.6 2.33 2.33 0 0 0-.395.758 3.48 3.48 0 0 0-.12.709h4.763a3.287 3.287 0 0 0-.799-1.704ZM6.484 9.574a2.24 2.24 0 0 0 1.383-.396 1.507 1.507 0 0 0 .531-1.33 1.72 1.72 0 0 0-.177-.858 1.31 1.31 0 0 0-.487-.512 1.957 1.957 0 0 0-.689-.25 4.42 4.42 0 0 0-.817-.067H3.169v3.413h3.315ZM15.6 5.3h5.951v1.48H15.6V5.3Z"/></svg>Behance</a>
       </div>
       <p class="sr-only" id="copy-status" role="status"></p>
     </div>
   </section>
 </main>
-<footer class="objfoot" data-theme="cream" aria-labelledby="of-title">
+<footer class="objfoot" data-theme="ink" aria-label="Objects I love, from my desk">
   <div class="ogrid" id="ogrid">
-    <p class="ocap" aria-live="polite"><span class="otitle" id="of-title" data-t="of_title">Objects I love, from my desk</span><span class="otext" id="otext" data-t="of_hint">hover, tap or click one</span></p>
   </div>
   <template id="otpl">
     <button class="obj" type="button" data-cap=""><img alt="" draggable="false"></button>
