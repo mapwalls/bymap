@@ -15,7 +15,7 @@ Referencias (solo ideas, nunca copiar ilustraciones): Ollivere (una idea por pan
 
 ## Restricciones duras
 - NADA del Triceratops bebé (es de su proyecto de YouTube). Ni en el portafolio ni como pista.
-- Sus fotos de arte son SOLO inspiración: no renderizar, vectorizar ni reproducir. Excepción pedida por ella: sus post-its reales (`assets/notes/`) se muestran en la sección "Notes to self".
+- Sus fotos de arte son SOLO inspiración: no renderizar, vectorizar ni reproducir. Excepciones pedidas por ella: sus post-its reales (`assets/notes/`) en la home y la foto de su ilustración de la ballena (`assets/about/art-whale.webp`) en el carrusel de polaroids de About.
 - No copiar ilustraciones de los sitios de referencia.
 - Los juguetes (`assets/*.webp`: godzilla, shiba, dilo, pinata, duck) son recortes suyos; `maria.webp` es su retrato.
 - Respetar `prefers-reduced-motion`.
