@@ -23,7 +23,7 @@
     s4_t: 'Diseñar', s4_a: 'Mockups', s4_b: 'Prototipado', s4_c: 'Implementación del design system',
     s5_t: 'Probar', s5_a: 'Pruebas de usabilidad', s5_b: 'Análisis de feedback con apoyo de IA',
     s6_t: 'Acompañar', s6_a: 'Seguimiento al trabajo de front-end para asegurar la calidad',
-    work_eyebrow: 'Trabajo seleccionado', work_title: 'Proyectos recientes de los que estoy orgullosa.', see_all: 'Ver todos los proyectos', cv_btn: 'Descargar mi CV', all_eyebrow: 'Todo el trabajo', all_title: 'Todos los proyectos, con el pensamiento detrás.', back_home: '← Volver al inicio',
+    work_eyebrow: 'Trabajo seleccionado', work_title: 'Proyectos recientes de los que estoy orgullosa.', see_all: 'Ver todos los proyectos', life_eyebrow: 'Fuera de la pantalla', life_title: 'Dibujar, viajar y mucho cielo.', cap_art: 'Dibujando', cap_dk: 'Dinamarca', cap_is: 'Islandia', cap_ny: 'Nueva York', cv_btn: 'Descargar mi CV', all_eyebrow: 'Todo el trabajo', all_title: 'Todos los proyectos, con el pensamiento detrás.', back_home: '← Volver al inicio',
     case: 'Caso', m1: 'usuarios creando reportes', m2: 'inscripciones incompletas', m3: 'tasa de completación', m4: 'componentes',
     btn_think: 'Cómo lo pensé', lbl_problem: 'El problema', lbl_decision: 'Mi decisión', lbl_result: 'El resultado', link_case: 'Leer caso de estudio',
     c1_desc: 'Un módulo donde los administradores de HR crean, gestionan y generan sus propios reportes; luego describen uno en lenguaje natural y la IA lo configura.',
@@ -234,8 +234,34 @@
     // once it passes full width, the big words step back so the giant letters take the screen
     const fade = String(1 - clamp((p - .3) / .3, 0, 1));
     bigLines.forEach(l => { l.style.opacity = fade; });
-    clearWrap.style.transform = `scale(${clearWrap._s.toFixed(4)})`;
+    zoomText(clearWrap._s);
     heroFade.forEach(el => { el.style.opacity = String(1 - clamp(p * 3, 0, 1)); });
+  }
+  // The zoom is drawn by changing the real font size of a copy, not with transform: scale(),
+  // so the browser redraws the letters as vectors at every size instead of stretching pixels.
+  const heroPin = $('#heroPin');
+  let zoomEl = null;
+  function zoomText(s) {
+    if (s <= 1.001 || !heroPin) {
+      if (zoomEl) zoomEl.hidden = true;
+      clearLine.style.visibility = '';
+      return;
+    }
+    if (!zoomEl) {
+      zoomEl = clearLine.cloneNode(true);
+      zoomEl.classList.add('clear-zoom');
+      zoomEl.removeAttribute('data-t');
+      zoomEl.setAttribute('aria-hidden', 'true');
+      heroPin.appendChild(zoomEl);
+    }
+    if (zoomEl.textContent !== clearLine.textContent) zoomEl.innerHTML = clearLine.innerHTML;
+    const pr = heroPin.getBoundingClientRect(), cr = clearLine.getBoundingClientRect();
+    const base = parseFloat(getComputedStyle(clearLine).fontSize);
+    zoomEl.style.left = `${(cr.left - pr.left + cr.width / 2).toFixed(1)}px`;
+    zoomEl.style.top = `${(cr.top - pr.top + cr.height / 2).toFixed(1)}px`;
+    zoomEl.style.fontSize = `${(base * s).toFixed(2)}px`;
+    zoomEl.hidden = false;
+    clearLine.style.visibility = 'hidden';
   }
   addEventListener('scroll', () => requestAnimationFrame(growClear), { passive: true });
   hooks.push(() => { growClear(); });
@@ -432,6 +458,18 @@
     build(); mqMobile.addEventListener('change', build);
     hooks.push(() => { cells.forEach(c => c.b.setAttribute('aria-label', capText(c.idx))); cap.textContent = hint(); });
   })();
+
+  /* ================= about: polaroid carousel ================= */
+  const polTrack = $('#polTrack');
+  if (polTrack) {
+    const prev = $('#polPrev'), next = $('#polNext');
+    const step = () => { const it = $('.pol', polTrack); return it ? it.getBoundingClientRect().width + parseFloat(getComputedStyle(polTrack).columnGap || 24) : 300; };
+    const sync = () => { prev.disabled = polTrack.scrollLeft < 8; next.disabled = polTrack.scrollLeft + polTrack.clientWidth > polTrack.scrollWidth - 8; };
+    prev.addEventListener('click', () => polTrack.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }));
+    next.addEventListener('click', () => polTrack.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }));
+    polTrack.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+    addEventListener('resize', sync); sync();
+  }
 
   /* ================= experience: the CV download follows the language ================= */
   const cvBtn = $('#cv-btn');
